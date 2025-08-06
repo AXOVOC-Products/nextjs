@@ -12,7 +12,7 @@ const featuredArticles = [
     excerpt: "VO₂ Max is the maximum amount of oxygen your body can use during intense exercise. It's one of the most accurate indicators of your cardiovascular fitness and endurance capacity.",
     date: "August 5, 2025",
     readTime: "3 mins read",
-    image: "/featured-vo2-max.png",
+    image: "/nextjs/featured-vo2-max.png",
     categories: ["Fitness", "Research"]
   },
   {
@@ -21,7 +21,7 @@ const featuredArticles = [
     excerpt: "Metabolic flexibility is your body's ability to efficiently switch between different fuel sources. Learn how to optimize this crucial aspect of your health.",
     date: "August 3, 2025",
     readTime: "5 mins read",
-    image: "/metabolic-flexibility.jpg",
+    image: "/nextjs/metabolic-flexibility.jpg",
     categories: ["Research", "Health"]
   },
   {
@@ -30,7 +30,7 @@ const featuredArticles = [
     excerpt: "Not all recovery metrics are created equal. Discover which biomarkers provide the most actionable insights for athletic performance.",
     date: "August 1, 2025",
     readTime: "4 mins read",
-    image: "/recovery-metrics.png",
+    image: "/nextjs/recovery-metrics.png",
     categories: ["Athletic Performance", "Research"]
   }
 ]

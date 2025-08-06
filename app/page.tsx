@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="space-y-6">
           <div className="relative h-64 lg:h-80 rounded-lg overflow-hidden">
             <Image
-              src="/athletic-runner.jpg"
+              src="/nextjs/athletic-runner.jpg"
               alt="Person running on road"
               fill
               className="object-cover"
@@ -47,7 +47,7 @@ export default function HomePage() {
           </div>
           <div className="relative h-64 lg:h-80 rounded-lg overflow-hidden">
             <Image
-              src="/couple_exercising.jpg"
+              src="/nextjs/couple_exercising.jpg"
               alt="People exercising and doing planks"
               fill
               className="object-cover"
