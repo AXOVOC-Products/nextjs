@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
   output: 'export',
   distDir: 'dist',
   eslint: {
