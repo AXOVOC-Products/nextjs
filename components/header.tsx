@@ -1,26 +1,31 @@
 "use client"
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import Image from 'next/image'
-import {Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
+import { useState } from "react"
 
-import { FaLinkedinIn, FaYoutube, FaStrava, FaInstagram, FaFacebookF } from "react-icons/fa";
+import {
+  FaLinkedinIn as Linkedin,
+  FaYoutube as Youtube,
+  FaInstagram as Instagram,
+  FaFacebookF as Facebook,
+} from "react-icons/fa"
 
 const StravaIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.172"/>
+    <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.172" />
   </svg>
 )
 
 const navigation = [
-  { name: 'HOME', href: '/' },
-  { name: 'ABOUT', href: '/about' },
-  { name: 'PRODUCT', href: '/product' },
-  { name: 'TBD', href: '/tbd' },
-  { name: 'BLOGS', href: '/blogs' },
-  { name: 'CONTACT US', href: '/contact' },
+  { name: "HOME", href: "/" },
+  { name: "ABOUT", href: "/about" },
+  { name: "PRODUCT", href: "/product" },
+  { name: "TBD", href: "/tbd" },
+  { name: "BLOGS", href: "/blogs" },
+  { name: "CONTACT US", href: "/contact" },
 ]
 
 export default function Header() {
@@ -51,8 +56,8 @@ export default function Header() {
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+                    : "text-black hover:text-blue-600"
                 }`}
               >
                 {item.name}
@@ -62,105 +67,86 @@ export default function Header() {
 
           {/* Desktop Social Icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://www.youtube.com/@axovoc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-            </a>
-            <a
+            <Link href="https://www.youtube.com/@axovoc" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <Youtube className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+            </Link>
+            <Link
               href="https://www.strava.com/clubs/axovoc/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Strava"
             >
-              <FaStrava className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-            </a>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-            </a>
-            <a
+              <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+            </Link>
+            <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+            </Link>
+            <Link
               href="https://www.instagram.com/axovoc/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FaInstagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-            </a>
-            <a
+              <Instagram className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+            </Link>
+            <Link
               href="https://www.facebook.com/axovoc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FaFacebookF className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-            </a>
+              <Facebook className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+            </Link>
           </div>
 
           {/* Mobile menu button and social icons */}
           <div className="md:hidden flex items-center space-x-4">
             {/* Mobile Social Icons */}
             <div className="flex items-center space-x-3">
-              <a
+              <Link
                 href="https://www.youtube.com/@axovoc"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
               >
-                <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-              </a>
-              <a
+                <Youtube className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              </Link>
+              <Link
                 href="https://www.strava.com/clubs/axovoc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Strava"
               >
-                <FaStrava className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-              </a>
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-              </a>
-              <a
+                <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              </Link>
+              <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              </Link>
+              <Link
                 href="https://www.instagram.com/axovoc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <FaInstagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-              </a>
-              <a
+                <Instagram className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              </Link>
+              <Link
                 href="https://www.facebook.com/axovoc"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
-                <FaFacebookF className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
-              </a>
+                <Facebook className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              </Link>
             </div>
-            
+
             {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-md text-gray-600 hover:text-black hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black"
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -175,8 +161,8 @@ export default function Header() {
                   href={item.href}
                   className={`block px-3 py-2 text-base font-medium transition-colors ${
                     pathname === item.href
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-black hover:text-blue-600 hover:bg-gray-50"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
