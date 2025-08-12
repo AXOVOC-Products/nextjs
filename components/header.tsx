@@ -3,8 +3,10 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Youtube, Linkedin, Instagram, Facebook, Menu, X } from 'lucide-react'
+import {Menu, X } from 'lucide-react'
 import { useState } from 'react'
+
+import { FaLinkedinIn, FaYoutube, FaStrava, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const StravaIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -66,7 +68,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="YouTube"
             >
-              <Youtube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+              <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
             <a
               href="https://www.strava.com/"
@@ -74,7 +76,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="Strava"
             >
-              <StravaIcon className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+              <FaStrava className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
             <a
               href="https://www.linkedin.com/"
@@ -82,7 +84,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+              <FaLinkedinIn className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
             <a
               href="https://www.instagram.com/axovoc/"
@@ -90,7 +92,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <Instagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+              <FaInstagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
             <a
               href="https://www.facebook.com/axovoc"
@@ -98,7 +100,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <Facebook className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+              <FaFacebookF className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
           </div>
 
@@ -112,7 +114,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
               >
-                <Youtube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+                <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a
                 href="https://www.strava.com/"
@@ -120,7 +122,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 aria-label="Strava"
               >
-                <StravaIcon className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+                <FaStrava className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a
                 href="https://www.linkedin.com/"
@@ -128,7 +130,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+                <FaLinkedinIn className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a
                 href="https://www.instagram.com/axovoc/"
@@ -136,7 +138,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+                <FaInstagram className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a
                 href="https://www.facebook.com/axovoc"
@@ -144,7 +146,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
+                <FaFacebookF className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
             </div>
             
