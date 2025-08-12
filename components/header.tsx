@@ -71,7 +71,7 @@ export default function Header() {
               <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
             </a>
             <a
-              href="https://www.strava.com/"
+              href="https://www.strava.com/clubs/axovoc/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Strava"
@@ -117,7 +117,7 @@ export default function Header() {
                 <FaYoutube className="w-5 h-5 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a
-                href="https://www.strava.com/"
+                href="https://www.strava.com/clubs/axovoc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Strava"
