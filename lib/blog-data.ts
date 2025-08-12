@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Understanding Your Cardiorespiratory Fitness",
         type: "video",
-        thumbnail: "/nextjs/vo2-max-explanation.png",
+        thumbnail: "/nextjs/featured-vo2-max.png",
         duration: "4:32",
       },
     ],
