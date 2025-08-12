@@ -9,11 +9,13 @@ import { ChevronLeft, ChevronRight, Search, Heart, Zap, FileText, Globe } from "
 import { getFeaturedArticles, getAllBlogPosts } from "@/lib/blog-data"
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 import { IoFitness } from "react-icons/io5";
+import { FaRunning } from "react-icons/fa";
+
 
 const categories = [
   { name: "Latest Blogs", icon: "new"},
   { name: "Fitness", icon: IoFitness},
-  { name: "Athletic Performance", icon: Zap},
+  { name: "Athletic Performance", icon: FaRunning},
   { name: "Research", icon: HiDocumentMagnifyingGlass},
 ]
 
