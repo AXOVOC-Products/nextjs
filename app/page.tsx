@@ -93,15 +93,15 @@ export default function HomePage() {
                   {/* Square image */}
                   <div className="relative h-40 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
                     <Image
-                      src="/nextjs/woman-outdoor-yoga.png"
-                      alt="Woman doing yoga outdoors"
+                      src="/nextjs/exercise-outdoors.jpg"
+                      alt="Woman sitting outdoors"
                       fill
                       className="object-cover"
                     />
                   </div>
                   {/* Landscape image */}
                   <div className="relative h-32 w-48 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/gym-plank.png" alt="Person planking in gym" fill className="object-cover" />
+                    <Image src="/nextjs/gym.jpg" alt="Person planking in gym" fill className="object-cover" />
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ export default function HomePage() {
                   {/* Square image on top */}
                   <div className="relative h-40 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
                     <Image
-                      src="/nextjs/outdoor-cyclist-helmet.png"
+                      src="/nextjs/biking.jpg"
                       alt="Cyclist training outdoors"
                       fill
                       className="object-cover"
@@ -118,7 +118,7 @@ export default function HomePage() {
                   </div>
                   {/* Portrait rectangular image */}
                   <div className="relative h-60 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/athlete-on-track.png" alt="Runner on track" fill className="object-cover" />
+                    <Image src="/nextjs/woman-running.jpg" alt="Woman running" fill className="object-cover" />
                   </div>
                 </div>
               </div>
