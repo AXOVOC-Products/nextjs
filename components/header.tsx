@@ -21,9 +21,8 @@ const StravaIcon = ({ className }: { className?: string }) => (
 
 const navigation = [
   { name: "HOME", href: "/" },
-  { name: "ABOUT", href: "/about" },
-  { name: "PRODUCT", href: "/product" },
-  { name: "TBD", href: "/tbd" },
+  { name: "MISSION", href: "/mission" },
+  { name: "FAQ", href: "/faq" },
   { name: "BLOGS", href: "/blogs" },
   { name: "CONTACT US", href: "/contact" },
 ]
@@ -39,17 +38,17 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/nextjs/axovoc-logo.png"
+              src="/nextjs/axovoc-logo-trim.png"
               alt="AXOVOC"
               width={160}
               height={44}
-              className="w-[120px] min-w-[100px] md:w-[160px] md:min-w-[120px] h-auto"
+              className="w-[120px] min-w-[100px] md:w-[160px] md:min-w-[120px] h-auto max-h-12 object-contain"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -65,44 +64,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop Social Icons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="https://www.youtube.com/@axovoc" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <Youtube className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
-            </Link>
+          {/* Desktop Right Section */}
+          <div className="hidden lg:flex items-center space-x-6">
             <Link
-              href="https://www.strava.com/clubs/axovoc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Strava"
+              href="/"
+              className="px-6 py-2 rounded-full font-bold text-white text-sm transition-all hover:shadow-lg hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
+              }}
             >
-              <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+              Pre-Order Now
             </Link>
-            <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
-            </Link>
-            <Link
-              href="https://www.instagram.com/axovoc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
-            </Link>
-            <Link
-              href="https://www.facebook.com/axovoc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
-            </Link>
-          </div>
 
-          {/* Mobile menu button and social icons */}
-          <div className="md:hidden flex items-center space-x-4">
-            {/* Mobile Social Icons */}
-            <div className="flex items-center space-x-3">
+            {/* Desktop Social Icons */}
+            <div className="flex items-center space-x-4">
               <Link
                 href="https://www.youtube.com/@axovoc"
                 target="_blank"
@@ -139,6 +114,19 @@ export default function Header() {
                 <Facebook className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
               </Link>
             </div>
+          </div>
+
+          {/* Mobile Right Section */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <Link
+              href="/"
+              className="px-4 py-2 rounded-full font-bold text-white text-xs transition-all hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
+              }}
+            >
+              Pre-Order
+            </Link>
 
             {/* Hamburger Menu Button */}
             <button
@@ -153,7 +141,7 @@ export default function Header() {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100">
+          <div className="lg:hidden border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
               {navigation.map((item) => (
                 <Link
@@ -169,6 +157,44 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+
+              <div className="flex items-center justify-center space-x-6 pt-4 pb-2 border-t border-gray-100 mt-4">
+                <Link
+                  href="https://www.youtube.com/@axovoc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+                </Link>
+                <Link
+                  href="https://www.strava.com/clubs/axovoc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Strava"
+                >
+                  <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+                </Link>
+                <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/axovoc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+                </Link>
+                <Link
+                  href="https://www.facebook.com/axovoc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
+                </Link>
+              </div>
             </div>
           </div>
         )}
