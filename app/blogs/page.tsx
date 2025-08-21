@@ -185,14 +185,14 @@ export default function BlogsPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
             {filteredPosts.map((post) => (
-              <Link key={post.id} href={`/blogs/${post.slug}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Link key={post.id} href={`/blogs/${post.slug}`} className="block h-full">
+                <Card className="h-full min-h-[440px] flex flex-col hover:shadow-lg transition-shadow cursor-pointer">
                   <div className="relative h-48 overflow-hidden rounded-t-lg">
                     <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
                   </div>
-                  <CardHeader className="pb-2">
+                  <CardHeader className="pb-2 flex-1">
                     <div className="flex flex-wrap gap-2 mb-2">
                       {post.categories.map((category) => (
                         <span
@@ -205,7 +205,7 @@ export default function BlogsPage() {
                     </div>
                     <CardTitle className="text-lg leading-tight">{post.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="mt-auto">
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span>{post.date}</span>
                       <span className="text-blue-600 font-medium">{post.readTime}</span>

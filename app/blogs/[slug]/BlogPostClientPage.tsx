@@ -80,32 +80,63 @@ export default function BlogPostClientPage({ params }: BlogPostPageProps) {
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-4">Related Topics</h3>
             <div className="space-y-4">
-              {post.relatedTopics.map((topic, index) => (
-                <div key={index} className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="relative mb-3">
-                    <Image
-                      src={topic.thumbnail || "/placeholder.svg"}
-                      alt={topic.title}
-                      width={300}
-                      height={180}
-                      className="w-full h-32 object-cover rounded-lg"
-                    />
-                    {topic.type === "video" && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="bg-black/70 rounded-full p-3">
-                          <Play className="w-6 h-6 text-white fill-white" />
-                        </div>
+              {post.relatedTopics.map((topic, index) => {
+                const isArticle = topic.type === "article" && topic.slug
+                return isArticle ? (
+                  <Link key={index} href={`/blogs/${topic.slug}`} className="block">
+                    <div className="bg-white rounded-lg p-4 border border-gray-200 hover:bg-gray-50 transition">
+                      <div className="relative mb-3">
+                        <Image
+                          src={topic.thumbnail || "/placeholder.svg"}
+                          alt={topic.title}
+                          width={300}
+                          height={180}
+                          className="w-full h-32 object-cover rounded-lg"
+                        />
+                        {topic.duration && (
+                          <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                            {topic.duration}
+                          </div>
+                        )}
                       </div>
-                    )}
-                    {topic.duration && (
-                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        {topic.duration}
+                      <h4 className="font-medium text-gray-800 text-sm leading-tight">{topic.title}</h4>
+                    </div>
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    href={topic.url || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="bg-white rounded-lg p-4 border border-gray-200 hover:bg-gray-50 transition">
+                      <div className="relative mb-3">
+                        <Image
+                          src={topic.thumbnail || "/placeholder.svg"}
+                          alt={topic.title}
+                          width={300}
+                          height={180}
+                          className="w-full h-32 object-cover rounded-lg"
+                        />
+                        {topic.type === "video" && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="bg-black/70 rounded-full p-3">
+                              <Play className="w-6 h-6 text-white fill-white" />
+                            </div>
+                          </div>
+                        )}
+                        {topic.duration && (
+                          <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                            {topic.duration}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                  <h4 className="font-medium text-gray-800 text-sm leading-tight">{topic.title}</h4>
-                </div>
-              ))}
+                      <h4 className="font-medium text-gray-800 text-sm leading-tight">{topic.title}</h4>
+                    </div>
+                  </a>
+                )
+              })}
             </div>
           </div>
         </div>
