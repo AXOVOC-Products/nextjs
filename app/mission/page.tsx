@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight, Target, Zap, Heart, Users, Shield, Leaf } from "lucide-react"
+import { ChevronDown, Target, Zap, Heart, Users, Shield, Leaf } from "lucide-react"
 import { FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa"
 
 const StravaIcon = ({ className }: { className?: string }) => (
@@ -39,47 +39,47 @@ export default function MissionPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative">
-        {/* Image at top - not full screen */}
-        <div className="relative w-full h-[50vh] lg:h-[60vh] bg-gradient-to-r from-blue-100 to-purple-100">
-          <Image
-            src="/nextjs/hear-a-story.jpg"
-            alt="Hear a Story"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/20"></div>
-          
-          {/* Scroll Arrow - Bottom Right */}
-          <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 z-10">
-            <div className="flex flex-col items-center space-y-2">
-              <ChevronRight className="w-6 h-6 text-white transform rotate-90 animate-bounce" />
-              <span className="text-xs text-white font-medium">Scroll</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Background gradient for text section */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
-        
-        {/* Text content below image */}
-        <div className="relative z-10 py-12 lg:py-16">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        {/* Text content on top */}
+        <div className="pt-20 lg:pt-24 pb-8 lg:pb-12 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-left space-y-6">
+            <div className="text-left space-y-6 relative">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">
                 Every breath tells a story.
               </h1>
-              <p className="text-xl lg:text-2xl text-blue-600 font-semibold">
+              <p className="text-2xl lg:text-3xl xl:text-4xl font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 We help you hear it!
               </p>
+              
+              {/* Scroll Arrow - Positioned in middle of text */}
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                <ChevronDown className="w-8 h-8 lg:w-10 lg:h-10 text-gray-600 animate-bounce" />
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Image at bottom - aligned with heading */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full h-[50vh] lg:h-[60vh] bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl overflow-hidden">
+            <Image
+              src="/hear-a-story.jpg"
+              alt="Hear a Story"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
+        </div>
+
+        {/* Extra padding space after image */}
+        <div className="pb-20 lg:pb-32"></div>
       </section>
 
       {/* Challenges Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-32 lg:py-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-black">
@@ -177,19 +177,18 @@ export default function MissionPage() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto relative">
             <h2 className="text-3xl lg:text-4xl font-bold mb-20 text-black text-left">
               A different way forward.<br />
-              <span className="text-blue-600">That's where Axovoc comes in.</span>
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">That's where Axovoc comes in.</span>
             </h2>
             
             {/* Large Background Arrow - Positioned slightly higher */}
             <div className="absolute -right-16 top-2/3 transform -translate-y-1/2 hidden lg:flex items-center justify-center w-64">
               <div className="flex flex-col items-center space-y-4">
-                <ChevronRight className="w-64 h-64 text-gray-200 transform rotate-90" />
-                <span className="text-sm text-gray-400 font-medium">Discover</span>
+                <ChevronDown className="w-64 h-64 text-gray-200" />
               </div>
             </div>
 
@@ -475,7 +474,7 @@ export default function MissionPage() {
             className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:shadow-lg hover:scale-105"
           >
             Join us today
-            <ChevronRight className="ml-2 w-5 h-5" />
+            <ChevronDown className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
