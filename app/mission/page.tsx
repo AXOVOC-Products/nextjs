@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronDown, Target, Zap, Heart, Users, Shield, Leaf } from "lucide-react"
+import { ChevronDown, Target, Zap, Heart, Users, Shield, Leaf, Activity, Smartphone } from "lucide-react"
 import { FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa"
 
 const StravaIcon = ({ className }: { className?: string }) => (
@@ -80,10 +80,10 @@ export default function MissionPage() {
       </section>
 
       {/* Challenges Section */}
-      <section className="py-32 lg:py-40 bg-white">
+      <section className="pt-24 lg:pt-32 pb-32 lg:pb-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-black">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black">
               The Challenges We All Face
             </h2>
             <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -210,7 +210,7 @@ export default function MissionPage() {
               {/* First What If - Slightly right of center */}
               <div className="flex items-start space-x-4 max-w-2xl ml-16 lg:ml-32">
                 <div className="flex-shrink-0 mt-2">
-                  <Zap className="w-8 h-8 text-gray-600" />
+                  <Activity className="w-8 h-8 text-gray-600" />
                 </div>
                 <div>
                   <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
@@ -236,7 +236,7 @@ export default function MissionPage() {
               {/* Third What If - Aligned with first */}
               <div className="flex items-start space-x-4 max-w-2xl ml-16 lg:ml-32">
                 <div className="flex-shrink-0 mt-2">
-                  <Heart className="w-8 h-8 text-gray-600" />
+                  <Smartphone className="w-8 h-8 text-gray-600" />
                 </div>
                 <div>
                   <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
@@ -295,16 +295,16 @@ export default function MissionPage() {
               </div>
             </div>
           </div>
-          <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-purple-100 to-pink-100">
-                          <Image
-                src="/nextjs/Mask_1.png"
-                alt="Vortex Device"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                quality={75}
-                loading="lazy"
-              />
+          <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-purple-100 to-pink-100 p-8">
+            <Image
+              src="/nextjs/Mask_1.png"
+              alt="Vortex Device"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={75}
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
         </div>
@@ -368,12 +368,12 @@ export default function MissionPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 lg:py-24 bg-gray-100">
+      <section className="py-32 lg:py-48 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 lg:gap-20">
             {/* Left: Full-screen Image (3 columns) */}
             <div className="lg:col-span-3">
-              <div className="relative h-64 sm:h-80 lg:h-[600px] bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl overflow-hidden shadow-lg w-full">
+              <div className="relative h-64 sm:h-80 lg:h-[600px] bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl overflow-hidden shadow-xl w-full">
                 <Image
                   src="/nextjs/company-building.jpg"
                   alt="Team Collaboration"
@@ -383,65 +383,65 @@ export default function MissionPage() {
                   quality={75}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
 
             {/* Right: Values Grid (7 columns) */}
             <div className="lg:col-span-7">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-black">Our Company Values</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-black">Our Company Values</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <Users className="w-8 h-8 text-gray-600" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                  <CardContent className="p-8 lg:p-10">
+                    <div className="flex items-start space-x-6">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl">
+                        <Users className="w-8 h-8 text-blue-600" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-3 text-black">Customer First</h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold mb-4 text-black">Customer First</h3>
                         <p className="text-gray-700 leading-relaxed">Your success is our success. Every decision we make starts with your needs.</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <Target className="w-8 h-8 text-gray-600" />
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                  <CardContent className="p-8 lg:p-10">
+                    <div className="flex items-start space-x-6">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl">
+                        <Target className="w-8 h-8 text-purple-600" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-3 text-black">Accuracy</h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold mb-4 text-black">Accuracy</h3>
                         <p className="text-gray-700 leading-relaxed">Every measurement you see is grounded in science and precision. No gimmicks, no inflated claims.</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <Shield className="w-8 h-8 text-gray-600" />
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                  <CardContent className="p-8 lg:p-10">
+                    <div className="flex items-start space-x-6">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-green-100 to-blue-100 rounded-xl">
+                        <Shield className="w-8 h-8 text-green-600" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-3 text-black">Trust & Integrity</h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold mb-4 text-black">Trust & Integrity</h3>
                         <p className="text-gray-700 leading-relaxed">We're committed to transparency — in our data, in our communication, and in the way we support you.</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <Leaf className="w-8 h-8 text-gray-600" />
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                  <CardContent className="p-8 lg:p-10">
+                    <div className="flex items-start space-x-6">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl">
+                        <Leaf className="w-8 h-8 text-emerald-600" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-3 text-black">Simplicity & Sustainability</h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold mb-4 text-black">Simplicity & Sustainability</h3>
                         <p className="text-gray-700 leading-relaxed">We believe in building technology that is not only easy to use but also respects the world we live in.</p>
                       </div>
                     </div>
@@ -457,7 +457,7 @@ export default function MissionPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-black">Who We Are?</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-black">Who We Are?</h2>
             
             <div className="space-y-8">
               <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
@@ -491,22 +491,43 @@ export default function MissionPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-            Every breath tells a story.
-          </h2>
-          <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-            With Vortex, you can finally listen.
-          </p>
-          
-          <Button 
-            size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:shadow-lg hover:scale-105"
-          >
-            Join us today
-            <ChevronDown className="ml-2 w-5 h-5" />
-          </Button>
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 text-gray-900">
+              Every breath tells a story.
+            </h2>
+            <p className="text-xl lg:text-2xl mb-12 text-gray-700 leading-relaxed">
+              With Vortex, you can finally listen.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0"
+              >
+                Join us today
+              </Button>
+              
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-10 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-lg"
+              >
+                Learn more
+              </Button>
+            </div>
+            
+            {/* Decorative Elements */}
+            <div className="mt-16 flex justify-center space-x-8 opacity-30">
+              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
