@@ -63,12 +63,13 @@ export default function MissionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative w-full h-[50vh] lg:h-[60vh] bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl overflow-hidden">
             <Image
-              src="/hear-a-story.jpg"
+              src="/nextjs/hear-a-story.jpg"
               alt="Hear a Story"
               fill
               className="object-cover"
               priority
               sizes="100vw"
+              quality={85}
             />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
@@ -99,6 +100,9 @@ export default function MissionPage() {
                   alt="Fitness Tracking Visualization"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
@@ -115,6 +119,9 @@ export default function MissionPage() {
                   alt="Smartwatch Estimates"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
@@ -131,6 +138,9 @@ export default function MissionPage() {
                   alt="Lab Testing"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
@@ -163,12 +173,15 @@ export default function MissionPage() {
 
               {/* Right: Image */}
               <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-red-100 to-orange-100 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/nextjs/man-depressed.jpg"
-                  alt="Frustration with Current Technology"
-                  fill
-                  className="object-cover"
-                />
+                              <Image
+                src="/nextjs/man-depressed.jpg"
+                alt="Frustration with Current Technology"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={75}
+                loading="lazy"
+              />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
             </div>
@@ -242,12 +255,15 @@ export default function MissionPage() {
         {/* Row 1: Our Why - Image Left, Text Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-blue-100 to-purple-100 order-2 lg:order-1">
-            <Image
-              src="/nextjs/group-people-exercise.jpg"
-              alt="Lab vs Portable Testing"
-              fill
-              className="object-cover"
-            />
+                          <Image
+                src="/nextjs/group-people-exercise.jpg"
+                alt="Lab vs Portable Testing"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={75}
+                loading="lazy"
+              />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 sm:p-12 lg:p-20 flex items-center order-1 lg:order-2">
@@ -280,12 +296,15 @@ export default function MissionPage() {
             </div>
           </div>
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-purple-100 to-pink-100">
-            <Image
-              src="/nextjs/Mask_1.png"
-              alt="Vortex Device"
-              fill
-              className="object-cover"
-            />
+                          <Image
+                src="/nextjs/Mask_1.png"
+                alt="Vortex Device"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={75}
+                loading="lazy"
+              />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
         </div>
@@ -293,12 +312,15 @@ export default function MissionPage() {
         {/* Row 3: Our Approach - Image Left, Text Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-green-100 to-blue-100 order-2 lg:order-1">
-            <Image
-              src="/nextjs/running-on-a-dock.jpg"
-              alt="Breath Analysis"
-              fill
-              className="object-cover"
-            />
+                          <Image
+                src="/nextjs/running-on-a-dock.jpg"
+                alt="Breath Analysis"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={75}
+                loading="lazy"
+              />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
           <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 sm:p-12 lg:p-20 flex items-center order-1 lg:order-2">
@@ -331,12 +353,15 @@ export default function MissionPage() {
             </div>
           </div>
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-indigo-100 to-blue-100">
-            <Image
-              src="/nextjs/success-hands.jpg"
-              alt="Team Collaboration"
-              fill
-              className="object-cover"
-            />
+                          <Image
+                src="/nextjs/success-hands.jpg"
+                alt="Team Collaboration"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={75}
+                loading="lazy"
+              />
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
         </div>
@@ -354,6 +379,9 @@ export default function MissionPage() {
                   alt="Team Collaboration"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
@@ -447,12 +475,15 @@ export default function MissionPage() {
 
             {/* Team Image */}
             <div className="mt-12 relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/nextjs/team-who-we-are.png"
-                alt="AXOVOC Team"
-                fill
-                className="object-cover"
-              />
+                              <Image
+                  src="/nextjs/team-who-we-are.png"
+                  alt="AXOVOC Team"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                />
               <div className="absolute inset-0 bg-black/10"></div>
             </div>
           </div>
