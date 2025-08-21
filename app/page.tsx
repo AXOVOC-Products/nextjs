@@ -762,8 +762,7 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Low</div>
-                          <div className="text-sm text-gray-600">(estimates only)</div>
+                          <div className="text-gray-900">Low estimates only</div>
                         </div>
                       </div>
                     </td>
@@ -779,7 +778,7 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Gold-standard</div>
+                          <div className="text-gray-900">Gold-standard</div>
                         </div>
                       </div>
                     </td>
@@ -821,8 +820,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Predicts and</div>
-                          <div className="text-sm text-gray-600">indirect</div>
+                          <div className="text-gray-900">Predicts and indirect</div>
+                          
                         </div>
                       </div>
                     </td>
@@ -838,8 +837,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Direct and</div>
-                          <div className="text-sm text-gray-600">clinical</div>
+                          <div className="text-gray-900">Direct and clinical</div>
+
                         </div>
                       </div>
                     </td>
@@ -878,8 +877,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Very</div>
-                          <div className="text-sm text-gray-600">convenient</div>
+                          <div className="text-gray-900">Very convenient</div>
+                          
                         </div>
                       </div>
                     </td>
@@ -895,9 +894,9 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Requires</div>
-                          <div className="text-sm text-gray-600">appointment</div>
-                          <div className="text-sm text-gray-600">and setup</div>
+                          <div className=" text-gray-900">Not portable,</div>
+                          <div className=" text-gray-900">needs appointment</div>
+                          <div className=" text-gray-900">and setup</div>
                         </div>
                       </div>
                     </td>
@@ -939,8 +938,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Often</div>
-                          <div className="text-sm text-gray-600">generalized</div>
+                          <div className="text-gray-900">Often generalized</div>
+                        
                         </div>
                       </div>
                     </td>
@@ -956,8 +955,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Only after</div>
-                          <div className="text-sm text-gray-600">testing</div>
+                          <div className=" text-gray-900">Only after testing</div>
+
                         </div>
                       </div>
                     </td>
@@ -995,7 +994,7 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">Low upfront</div>
+                          <div className="text-gray-900">Low upfront</div>
                         </div>
                       </div>
                     </td>
@@ -1011,8 +1010,8 @@ export default function HomePage() {
                           </svg>
                         </div>
                         <div className="text-left">
-                          <div className="font-semibold text-gray-900">High</div>
-                          <div className="text-sm text-gray-600">($200-500/test)</div>
+                          <div className=" text-gray-900">High price range</div>
+                          <div className=" text-gray-900">($200-$500/test)</div>
                         </div>
                       </div>
                     </td>
