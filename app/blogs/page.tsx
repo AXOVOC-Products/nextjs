@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Search, Heart, Zap, FileText, Globe } from "lucide-react"
@@ -23,6 +23,10 @@ export default function BlogsPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState("Latest Blogs")
   const [searchQuery, setSearchQuery] = useState("")
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   const featuredArticles = getFeaturedArticles()
   const blogPosts = getAllBlogPosts()
@@ -33,6 +37,51 @@ export default function BlogsPage() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + featuredArticles.length) % featuredArticles.length)
+  }
+
+  // Touch/Swipe handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    setStartX(e.pageX - (carouselRef.current?.offsetLeft || 0))
+    setScrollLeft(carouselRef.current?.scrollLeft || 0)
+  }
+
+  const handleMouseLeave = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - (carouselRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true)
+    setStartX(e.touches[0].pageX - (carouselRef.current?.offsetLeft || 0))
+    setScrollLeft(carouselRef.current?.scrollLeft || 0)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return
+    const x = e.touches[0].pageX - (carouselRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
   }
 
   const filteredPosts = blogPosts.filter((post) => {
@@ -59,7 +108,17 @@ export default function BlogsPage() {
           </div>
           
           {/* Carousel Container */}
-          <div className="relative h-full overflow-hidden z-10 pt-2">
+          <div 
+            ref={carouselRef}
+            className="relative h-full overflow-hidden z-10 pt-2 cursor-grab active:cursor-grabbing"
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="flex transition-transform duration-500 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -93,7 +152,7 @@ export default function BlogsPage() {
                           <span className="text-blue-600 font-medium text-sm">{article.readTime}</span>
                         </div>
 
-                        <Button className="bg-gray-800 text-white hover:bg-gray-900 px-6 lg:px-8 py-2 lg:py-3 rounded-full text-sm lg:text-base">
+                        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 lg:px-10 py-3 lg:py-4 rounded-full text-sm lg:text-base font-semibold transition-all hover:shadow-lg hover:scale-105">
                           Read More
                         </Button>
                       </div>
@@ -114,28 +173,30 @@ export default function BlogsPage() {
             </div>
           </div>
 
-          {/* Navigation Arrows - Moved further out */}
+          {/* Navigation Arrows - Enhanced styling */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 sm:left-8 lg:left-16 top-1/2 transform -translate-y-1/2 p-2 lg:p-3 rounded-full bg-white/90 shadow-lg hover:bg-white transition-colors z-20"
+            className="absolute left-2 sm:left-8 lg:left-16 top-1/2 transform -translate-y-1/2 p-3 lg:p-4 rounded-full bg-white/95 shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 z-20 backdrop-blur-sm"
           >
-            <ChevronLeft className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600" />
+            <ChevronLeft className="w-5 h-5 lg:w-7 lg:h-7 text-gray-700" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 sm:right-8 lg:right-16 top-1/2 transform -translate-y-1/2 p-2 lg:p-3 rounded-full bg-white/90 shadow-lg hover:bg-white transition-colors z-20"
+            className="absolute right-2 sm:right-8 lg:right-16 top-1/2 transform -translate-y-1/2 p-3 lg:p-4 rounded-full bg-white/95 shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 z-20 backdrop-blur-sm"
           >
-            <ChevronRight className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600" />
+            <ChevronRight className="w-5 h-5 lg:w-7 lg:h-7 text-gray-700" />
           </button>
 
-          {/* Slide Indicators */}
-          <div className="absolute bottom-2 lg:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {/* Slide Indicators - Bar Style */}
+          <div className="absolute bottom-4 lg:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
             {featuredArticles.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-colors ${
-                  index === currentSlide ? "bg-gray-800" : "bg-gray-400"
+                className={`h-1 lg:h-1.5 transition-all duration-300 rounded-full ${
+                  index === currentSlide 
+                    ? "w-8 lg:w-12 bg-gray-800" 
+                    : "w-4 lg:w-6 bg-gray-400 hover:bg-gray-600"
                 }`}
               />
             ))}
@@ -164,10 +225,10 @@ export default function BlogsPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all hover:border-gray-400"
               />
             </div>
 
@@ -178,20 +239,26 @@ export default function BlogsPage() {
                 {categories.map((category) => {
                   const IconComponent = category.icon === "new" ? null : category.icon
                   return (
-                    <button
-                      key={category.name}
-                      onClick={() => setSelectedCategory(category.name)}
-                      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
-                        selectedCategory === category.name ? "bg-gray-100 border-2 border-gray-300" : "hover:bg-gray-50"
-                      }`}
-                    >
-                      {category.icon === "new" ? (
-                        <span className="px-2 py-1 bg-black text-white text-xs font-bold rounded">new</span>
-                      ) : (
-                        IconComponent && <IconComponent className="w-5 h-5 text-black" />
-                      )}
-                      <span className="font-medium text-gray-800">{category.name}</span>
-                    </button>
+                                         <button
+                       key={category.name}
+                       onClick={() => setSelectedCategory(category.name)}
+                       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
+                         selectedCategory === category.name 
+                           ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 shadow-sm" 
+                           : "hover:bg-gray-50 hover:shadow-sm"
+                       }`}
+                     >
+                       {category.icon === "new" ? (
+                         <span className={`px-2 py-1 text-xs font-bold rounded w-5 h-5 flex items-center justify-center ${
+                           selectedCategory === category.name 
+                             ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' 
+                             : 'bg-gray-600 text-white'
+                         }`}>new</span>
+                       ) : (
+                         IconComponent && <IconComponent className={`w-5 h-5 ${selectedCategory === category.name ? 'text-blue-600' : 'text-gray-600'}`} />
+                       )}
+                       <span className={`font-medium ${selectedCategory === category.name ? 'text-blue-700' : 'text-gray-800'}`}>{category.name}</span>
+                     </button>
                   )
                 })}
               </div>
@@ -201,10 +268,10 @@ export default function BlogsPage() {
           {/* Blog Posts Grid */}
           <div className="lg:col-span-3">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl font-bold text-black">
+              <h2 className="text-3xl font-bold text-black tracking-tight">
                 {selectedCategory === "Latest Blogs" ? "Latest Blogs" : selectedCategory}
               </h2>
-              <Link href="#" className="flex items-center text-gray-500 hover:text-blue-600">
+              <Link href="#" className="flex items-center text-gray-500 hover:text-blue-600 transition-colors">
                 View more
                 <ChevronRight className="w-4 h-4 ml-1" />
                 <ChevronRight className="w-4 h-4 -ml-2" />
@@ -214,16 +281,17 @@ export default function BlogsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
               {filteredPosts.map((post) => (
                 <Link key={post.id} href={`/blogs/${post.slug}`} className="block h-full">
-                  <Card className="h-full min-h-[440px] flex flex-col hover:shadow-lg transition-shadow cursor-pointer">
+                  <Card className="h-full min-h-[440px] flex flex-col hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 border-0 shadow-lg">
                     <div className="relative h-48 overflow-hidden rounded-t-lg">
                       <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
                     <CardHeader className="pb-2 flex-1">
                       <div className="flex flex-wrap gap-2 mb-2">
                         {post.categories.map((category) => (
                           <span
                             key={category}
-                            className="px-2 py-1 border border-gray-300 rounded-full text-xs font-medium text-gray-700"
+                            className="px-2 py-1 border border-gray-300 rounded-full text-xs font-medium text-gray-700 bg-white/80"
                           >
                             {category}
                           </span>
