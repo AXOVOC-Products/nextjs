@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/nextjs/axovoc-logo-trim.png"
+              src="/axovoc-logo-trim.png"
               alt="AXOVOC"
               width={160}
               height={44}

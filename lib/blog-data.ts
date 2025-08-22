@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "VO₂ Max is the gold standard for measuring fitness and longevity. Learn what it means, how it's measured, and why it matters more than steps or calories.",
     date: "August 20, 2025",
     readTime: "3 mins read",
-    image: "/nextjs/vo2max-intro.jpg",
+    image: "/vo2max-intro.jpg",
     categories: ["Fitness"],
     slug: "what-is-vo2-max-and-why-it-matters",
     isFeatured: true,
@@ -38,20 +38,20 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Curve We Can Bend: Why VO₂ Max Falls With Age—and How to Fight Back",
         type: "article",
-        thumbnail: "/nextjs/vo2-age-decline.jpg",
+        thumbnail: "/vo2-age-decline.jpg",
         slug: "why-vo2-max-declines-with-age-and-how-to-improve-it"
       },
       {
         title: "What is VO2 Max? Understanding Your Cardiorespiratory Fitness",
         type: "video",
-        thumbnail: "/nextjs/yt-what-is-vo2-max.png",
+        thumbnail: "/yt-what-is-vo2-max.png",
         duration: "5:17",
         url: "https://www.youtube.com/watch?v=TRXLKuoX9WA",
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/vo2max-intro.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/vo2max-intro.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="why-vo2-max-stands-out">Why VO₂ Max Stands Out</h2>
     <p>In a world where we track steps, heart rate, and calories burned, one measure cuts through the noise: VO₂ Max. This single number reflects how much oxygen your body can use during intense exercise. More than just a performance metric, research shows VO₂ Max predicts long-term health and even life expectancy better than traditional risk factors.</p>
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "VO₂ Max naturally drops with age due to heart, blood flow, and muscle changes. Learn the science—and 9 evidence-based ways to increase VO₂ Max at any age.",
     date: "August 20, 2025",
     readTime: "6 mins read",
-    image: "/nextjs/vo2-age-decline.jpg",
+    image: "/vo2-age-decline.jpg",
     categories: ["Research", "Athletic Performance"],
     slug: "why-vo2-max-declines-with-age-and-how-to-improve-it",
     isFeatured: true,
@@ -118,20 +118,20 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Ultimate Fitness Signal: What VO₂ Max Is and Why It Matters?",
         type: "article",
-        thumbnail: "/nextjs/vo2max-intro.jpg",
+        thumbnail: "/vo2max-intro.jpg",
         slug: "what-is-vo2-max-and-why-it-matters"
       },
       {
         title: "VO₂ Max: Decoding the Physiology Behind Your Aerobic Capacity",
         type: "video",
-        thumbnail: "/nextjs/yt-physiology.png",
+        thumbnail: "/yt-physiology.png",
         duration: "6:29",
         url: "https://www.youtube.com/watch?v=CPCXdSAUT2U&t=1s"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/vo2-age-decline.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/vo2-age-decline.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="the-short-answer">The short answer</h2>
     <p>VO₂ Max—the maximum rate your body can use oxygen during exercise—declines with age because oxygen delivery (heart output and blood flow) and oxygen use (muscle mitochondrial capacity) both slip. Up to late middle age, the bottleneck is mostly delivery; in very old age, muscle mitochondria play a bigger role. The good news: targeted training can raise VO₂ Max at any age.</p>
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Explore how carbohydrate intake and BMI affect metabolic flexibility—and why VO₂ Max is the clearest health indicator tying them all together.",
     date: "August 20, 2025",
     readTime: "7 mins read",
-    image: "/nextjs/carb-intake.jpg",
+    image: "/carb-intake.jpg",
     categories: ["Research", "Health"],
     slug: "link-carb-intake-bmi-metabolic-flexibility-vo2-max",
     isFeatured: true,
@@ -244,20 +244,20 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Overlooked Role of Mitochondrial Efficiency in Aging and Performance",
         type: "article",
-        thumbnail: "/nextjs/mitochondria.jpg",
+        thumbnail: "/mitochondria.jpg",
         slug: "mitochondrial-efficiency-aging-performance"
       },
       {
         title: "Why VO2 Max Beats Every Other Fitness Metric (Backed by Science)",
         type: "video",
-        thumbnail: "/nextjs/yt-one-number-matters.png",
+        thumbnail: "/yt-one-number-matters.png",
         duration: "6:07",
         url: "https://www.youtube.com/watch?v=1GsH8o5FTbw"
       }
     ],
     content: `
       <div class="mb-8">
-        <img src="/nextjs/carb-intake.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/carb-intake.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
       </div>
       <p><strong>Introduction: Why We're Using VO₂ Max as the Lens</strong></p>
       <p>You've probably heard about BMI, carb counting, and "metabolic flexibility"—but what's the real connection? Enter VO₂ Max—the gold-standard measure of how well your body uses oxygen. As a strong health and fitness predictor, it acts like a central hub that reveals how diet (carbs), weight (BMI), and metabolic health interweave. Let's dive in, simply but scientifically.</p>
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Prediabetes isn't just about glucose. Learn how improving VO₂ Max—measured accurately with Vortex—helps lower A1C, fasting insulin, HOMA-IR, and triglycerides, and which training (Zone 2, intervals, strength) works best.",
     date: "August 20, 2025",
     readTime: "11 mins read",
-    image: "/nextjs/diabetic.jpg",
+    image: "/diabetic.jpg",
     categories: ["Health", "Metabolic Health"],
     slug: "vo2-max-device-prediabetes-biomarkers",
     isFeatured: false,
@@ -351,26 +351,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Link Between Carb Intake, BMI, and Metabolic Flexibility—What VO₂ Max Reveals",
         type: "article",
-        thumbnail: "/nextjs/carb-intake.jpg",
+        thumbnail: "/carb-intake.jpg",
         slug: "link-carb-intake-bmi-metabolic-flexibility-vo2-max"
       },
       {
         title: "The Curve We Can Bend: Why VO₂ Max Falls With Age—and How to Fight Back",
         type: "article",
-        thumbnail: "/nextjs/vo2-age-decline.jpg",
+        thumbnail: "/vo2-age-decline.jpg",
         slug: "why-vo2-max-declines-with-age-and-how-to-improve-it"
       },
       {
         title: "Regular Exercise Increases THIS In Your Body",
         type: "video",
-        thumbnail: "/nextjs/yt-regular-exercise.png",
+        thumbnail: "/yt-regular-exercise.png",
         duration: "6:13",
         url: "https://www.youtube.com/watch?v=68tUsPHCrbM"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/diabetic.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/diabetic.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="the-idea-in-one-line">The idea in one line</h2>
     <p>For adults with prediabetes, the most actionable, high-signal metric to move is VO₂ Max. Raise it—and do so using training zones personalized by an accurate VO₂ test—and key metabolic biomarkers (A1C, fasting glucose, fasting insulin, HOMA-IR, triglycerides) typically move in the right direction.</p>
@@ -476,7 +476,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how VO₂ Max (aerobic fitness) protects your brain through better blood flow, BDNF release, and structural brain resilience—and how to strengthen it step by step.",
     date: "August 20, 2025",
     readTime: "9 mins read",
-    image: "/nextjs/brain.jpg",
+    image: "/brain.jpg",
     categories: ["Research", "Health"],
     slug: "vo2-max-fitness-brain-health",
     isFeatured: false,
@@ -495,26 +495,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "VO₂ Max and Immune Resilience: How Aerobic Fitness Strengthens Your Defenses",
         type: "article",
-        thumbnail: "/nextjs/immune.jpg",
+        thumbnail: "/immune.jpg",
         slug: "vo2-max-immune-system-resilience"
       },
       {
         title: "VO₂ Max and Workplace Performance: The Overlooked Career Advantage",
         type: "article",
-        thumbnail: "/nextjs/workplace.jpg",
+        thumbnail: "/workplace.jpg",
         slug: "vo2-max-workplace-performance"
       },
       {
         title: "How Interval Training Supercharges Your VO2 Max – The Science Behind HIIT",
         type: "video",
-        thumbnail: "/nextjs/yt-interval-training.png",
+        thumbnail: "/yt-interval-training.png",
         duration: "5:02",
         url: "https://www.youtube.com/watch?v=vHwts5kHdfQ"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/brain.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/brain.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="why-read-this">Why Read This?</h2>
     <p>Your brain's power to remember, focus, and adapt depends on more than diet or sleep—it relies on oxygen delivered efficiently through your cardiovascular system. VO₂ Max measures exactly that. In short: the fitter your body, the smarter your brain gets.</p>
@@ -597,7 +597,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how VO₂ Max (your peak aerobic capacity) helps boost immune response, reduce infection risk, and regulate inflammation—and find smart ways to build it through moderate and interval training.",
     date: "August 20, 2025",
     readTime: "9 mins read",
-    image: "/nextjs/immune.jpg",
+    image: "/immune.jpg",
     categories: ["Research", "Health"],
     slug: "vo2-max-immune-system-resilience",
     isFeatured: false,
@@ -618,26 +618,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "VO₂ Max and Brain Health: Why Higher Aerobic Fitness Supports Memory & Cognitive Function",
         type: "article",
-        thumbnail: "/nextjs/brain.jpg",
+        thumbnail: "/brain.jpg",
         slug: "vo2-max-fitness-brain-health"
       },
       {
         title: "The Ultimate Fitness Signal: What VO₂ Max Is and Why It Matters?",
         type: "article",
-        thumbnail: "/nextjs/vo2max-intro.jpg",
+        thumbnail: "/vo2max-intro.jpg",
         slug: "what-is-vo2-max-and-why-it-matters"
       },
       {
         title: "Regular Exercise Increases THIS In Your Body",
         type: "video",
-        thumbnail: "/nextjs/yt-regular-exercise.png",
+        thumbnail: "/yt-regular-exercise.png",
         duration: "6:13",
         url: "https://www.youtube.com/watch?v=68tUsPHCrbM"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/immune.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/immune.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="why-this-matters">Why This Matters</h2>
     <p>Every day, your immune system faces threats—from seasonal viruses to chronic inflammation. VO₂ Max isn't just a performance metric; it's a powerful indicator of how resilient your body is under health stress—whether that's a cold, COVID, or common immune decline with age.</p>
@@ -741,7 +741,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Mitochondria—the tiny power plants in your cells—play a central role in aging, energy, and performance. Learn how VO₂ Max ties directly to mitochondrial efficiency, and why training and lifestyle choices can keep your cells (and you) young.",
     date: "August 20, 2025",
     readTime: "9 mins read",
-    image: "/nextjs/mitochondria.jpg",
+    image: "/mitochondria.jpg",
     categories: ["Research", "Athletic Performance"],
     slug: "mitochondrial-efficiency-aging-performance",
     isFeatured: false,
@@ -760,26 +760,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Why VO₂ Max Declines With Age (and 9 Proven Ways to Raise It)",
         type: "article",
-        thumbnail: "/nextjs/vo2-age-decline.jpg",
+        thumbnail: "/vo2-age-decline.jpg",
         slug: "why-vo2-max-declines-with-age-and-how-to-improve-it"
       },
       {
         title: "VO₂ Max and Brain Health: Why Higher Aerobic Fitness Supports Memory & Cognitive Function",
         type: "article",
-        thumbnail: "/nextjs/brain.jpg",
+        thumbnail: "/brain.jpg",
         slug: "vo2-max-fitness-brain-health"
       },
       {
         title: "Understanding Your Cardiorespiratory Fitness",
         type: "video",
-        thumbnail: "/nextjs/yt-what-is-vo2-max.png",
+        thumbnail: "/yt-what-is-vo2-max.png",
         duration: "4:32",
         url: "https://www.youtube.com/watch?v=TRXLKuoX9WA"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/mitochondria.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/mitochondria.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="intro">Introduction: The Hidden Engines of Your Body</h2>
     <p>When people think about fitness and aging, they usually talk about diet, workouts, and maybe genetics. But behind the scenes, a less visible factor is quietly shaping how we age and how well we perform: mitochondrial efficiency. These tiny structures inside our cells act as power plants, turning oxygen and nutrients into the energy that keeps everything running—from your heartbeat to your next sprint.</p>
@@ -862,7 +862,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Beyond athletes, VO₂ Max is a hidden productivity multiplier in the workplace. Higher aerobic fitness boosts cognition, resilience, and career performance by fueling the brain with oxygen.",
     date: "August 20, 2025",
     readTime: "8 mins read",
-    image: "/nextjs/workplace.jpg",
+    image: "/workplace.jpg",
     categories: ["Athletic Performance", "Research"],
     slug: "vo2-max-workplace-performance",
     isFeatured: false,
@@ -880,26 +880,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "VO₂ Max and Brain Health: Why Higher Aerobic Fitness Supports Memory & Cognitive Function",
         type: "article",
-        thumbnail: "/nextjs/brain.jpg",
+        thumbnail: "/brain.jpg",
         slug: "vo2-max-fitness-brain-health"
       },
       {
         title: "VO₂ Max and Immune Resilience: How Aerobic Fitness Strengthens Your Defenses",
         type: "article",
-        thumbnail: "/nextjs/immune.jpg",
+        thumbnail: "/immune.jpg",
         slug: "vo2-max-immune-system-resilience"
       },
       {
         title: "Regular Exercise Increases THIS In Your Body",
         type: "video",
-        thumbnail: "/nextjs/yt-regular-exercise.png",
+        thumbnail: "/yt-regular-exercise.png",
         duration: "6:13",
         url: "https://www.youtube.com/watch?v=68tUsPHCrbM"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/workplace.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/workplace.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <p>When most people think of aerobic fitness, they picture runners, cyclists, or elite athletes. But one of the most powerful predictors of long-term productivity and success isn't just talent, networking, or the latest productivity hack—it's your VO₂ Max.</p>
     <p>VO₂ Max, short for maximal oxygen uptake, is the body's ability to take in, transport, and use oxygen during physical activity. While it's often seen as a "sports metric," research increasingly shows that VO₂ Max has a profound influence on how we think, perform, and manage stress in professional settings.</p>
@@ -979,7 +979,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Altitude, heat, and pollution aren't just background conditions—they directly shape VO₂ Max. Learn how these environmental stressors limit or enhance your aerobic potential and how to adapt smarter.",
     date: "August 20, 2025",
     readTime: "7 mins read",
-    image: "/nextjs/pollution.jpg",
+    image: "/pollution.jpg",
     categories: ["Research", "Athletic Performance"],
     slug: "environmental-stress-vo2max",
     isFeatured: false,
@@ -999,26 +999,26 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Overlooked Role of Mitochondrial Efficiency in Aging and Performance",
         type: "article",
-        thumbnail: "/nextjs/mitochondria.jpg",
+        thumbnail: "/mitochondria.jpg",
         slug: "mitochondrial-efficiency-aging-performance"
       },
       {
         title: "VO₂ Max and Immune Resilience: How Aerobic Fitness Strengthens Your Defenses",
         type: "article",
-        thumbnail: "/nextjs/immune.jpg",
+        thumbnail: "/immune.jpg",
         slug: "vo2-max-immune-system-resilience"
       },
       {
         title: "Understanding Your Cardiorespiratory Fitness",
         type: "video",
-        thumbnail: "/nextjs/yt-what-is-vo2-max.png",
+        thumbnail: "/yt-what-is-vo2-max.png",
         duration: "4:32",
         url: "https://www.youtube.com/watch?v=TRXLKuoX9WA"
       }
     ],
     content: `
     <div class="mb-8">
-        <img src="/nextjs/pollution.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
+        <img src="/pollution.jpg" alt="Descriptive alt text" class="w-full max-h-[600px] object-contain rounded-lg shadow-lg" />
     </div>
     <h2 id="intro">Introduction</h2>
     <p>Most people think of fitness as a simple equation: train harder, get fitter. But the truth is, your environment plays a massive role in how well your body performs—and how high your VO₂ Max can climb. Whether it's the thin air of the mountains, the heavy heat of summer, or even city smog, environmental stressors can either limit or, in some cases, enhance your aerobic potential.</p>

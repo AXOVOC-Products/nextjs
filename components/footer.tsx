@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Logo */}
         <div className="flex-shrink-0">
           <Image
-            src="/nextjs/axovoc-logo-footer.png"
+            src="/axovoc-logo-footer.png"
             alt="AXOVOC"
             width={120}
             height={40}

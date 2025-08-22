@@ -92,7 +92,7 @@ export default function ContactPage() {
               <CardContent className="p-0">
                 <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-red-50 to-red-100">
                   <Image
-                    src="/nextjs/axovoc-yt.jpg"
+                    src="/axovoc-yt.jpg"
                     alt="YouTube Channel"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -114,7 +114,7 @@ export default function ContactPage() {
               <CardContent className="p-0">
                 <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-orange-50 to-orange-100">
                   <Image
-                    src="/nextjs/axovoc-strava.jpg"
+                    src="/axovoc-strava.jpg"
                     alt="Strava Community"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -136,7 +136,7 @@ export default function ContactPage() {
               <CardContent className="p-0">
                 <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-blue-100">
                   <Image
-                    src="/nextjs/axovoc-linkedin.png"
+                    src="/axovoc-linkedin.png"
                     alt="LinkedIn Network"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -158,7 +158,7 @@ export default function ContactPage() {
               <CardContent className="p-0">
                 <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-purple-50 to-pink-100">
                   <Image
-                    src="/nextjs/axovoc-insta.png"
+                    src="/axovoc-insta.png"
                     alt="Instagram Feed"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -180,7 +180,7 @@ export default function ContactPage() {
               <CardContent className="p-0">
                 <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-indigo-100">
                   <Image
-                    src="/nextjs/axovoc-fb.jpg"
+                    src="/axovoc-fb.jpg"
                     alt="Facebook Community"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -267,7 +267,7 @@ export default function ContactPage() {
               <div className="order-2 lg:order-1">
                 <div className="relative h-80 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl shadow-lg overflow-hidden">
                   <Image
-                    src="/nextjs/FAQ.png"
+                    src="/FAQ.png"
                     alt="FAQ blocks"
                     fill
                     className="object-cover"
@@ -304,7 +304,7 @@ export default function ContactPage() {
               <div>
                 <div className="relative h-80 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl shadow-xl overflow-hidden">
                   <Image
-                    src="/nextjs/featured-vo2-max.png"
+                    src="/featured-vo2-max.png"
                     alt="VO₂ Science Featured Content"
                     fill
                     className="object-cover"
@@ -337,7 +337,7 @@ export default function ContactPage() {
               <div>
                 <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-12 flex items-center justify-center h-80 shadow-xl">
                   <Image
-                    src="/nextjs/axovoc-logo-trim.png"
+                    src="/axovoc-logo-trim.png"
                     alt="AXOVOC Logo"
                     width={200}
                     height={120}

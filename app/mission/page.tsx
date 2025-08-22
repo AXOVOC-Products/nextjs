@@ -63,7 +63,7 @@ export default function MissionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative w-full h-[50vh] lg:h-[60vh] bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl overflow-hidden">
             <Image
-              src="/nextjs/hear-a-story.jpg"
+              src="/hear-a-story.jpg"
               alt="Hear a Story"
               fill
               className="object-cover"
@@ -96,7 +96,7 @@ export default function MissionPage() {
             <div className="text-center space-y-6">
               <div className="relative w-full h-48 sm:h-56 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/nextjs/men-gym-frustrate.jpg"
+                  src="/men-gym-frustrate.jpg"
                   alt="Fitness Tracking Visualization"
                   fill
                   className="object-cover"
@@ -115,7 +115,7 @@ export default function MissionPage() {
             <div className="text-center space-y-6">
               <div className="relative w-full h-48 sm:h-56 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/nextjs/smart-watch-estimate.jpg"
+                  src="/smart-watch-estimate.jpg"
                   alt="Smartwatch Estimates"
                   fill
                   className="object-cover"
@@ -134,7 +134,7 @@ export default function MissionPage() {
             <div className="text-center space-y-6">
               <div className="relative w-full h-48 sm:h-56 bg-gradient-to-r from-red-100 to-orange-100 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/nextjs/lab-test-complicate.webp"
+                  src="/lab-test-complicate.webp"
                   alt="Lab Testing"
                   fill
                   className="object-cover"
@@ -174,7 +174,7 @@ export default function MissionPage() {
               {/* Right: Image */}
               <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-red-100 to-orange-100 rounded-xl overflow-hidden shadow-lg">
                               <Image
-                src="/nextjs/man-depressed.jpg"
+                src="/man-depressed.jpg"
                 alt="Frustration with Current Technology"
                 fill
                 className="object-cover"
@@ -256,7 +256,7 @@ export default function MissionPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-blue-100 to-purple-100 order-2 lg:order-1">
                           <Image
-                src="/nextjs/group-people-exercise.jpg"
+                src="/group-people-exercise.jpg"
                 alt="Lab vs Portable Testing"
                 fill
                 className="object-cover"
@@ -297,7 +297,7 @@ export default function MissionPage() {
           </div>
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-purple-100 to-pink-100 p-8">
             <Image
-              src="/nextjs/Mask_1.png"
+              src="/Mask_1.png"
               alt="Vortex Device"
               fill
               className="object-contain"
@@ -313,7 +313,7 @@ export default function MissionPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-green-100 to-blue-100 order-2 lg:order-1">
                           <Image
-                src="/nextjs/running-on-a-dock.jpg"
+                src="/running-on-a-dock.jpg"
                 alt="Breath Analysis"
                 fill
                 className="object-cover"
@@ -354,7 +354,7 @@ export default function MissionPage() {
           </div>
           <div className="relative h-64 sm:h-80 lg:h-full bg-gradient-to-r from-indigo-100 to-blue-100">
                           <Image
-                src="/nextjs/success-hands.jpg"
+                src="/success-hands.jpg"
                 alt="Team Collaboration"
                 fill
                 className="object-cover"
@@ -376,7 +376,7 @@ export default function MissionPage() {
             <div className="lg:col-span-3">
               <div className="relative h-64 sm:h-80 lg:h-[600px] bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl overflow-hidden shadow-xl w-full">
                 <Image
-                  src="/nextjs/company-building.jpg"
+                  src="/company-building.jpg"
                   alt="Team Collaboration"
                   fill
                   className="object-cover"
@@ -477,7 +477,7 @@ export default function MissionPage() {
             {/* Team Image */}
             <div className="mt-12 relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl overflow-hidden shadow-lg">
                               <Image
-                  src="/nextjs/team-who-we-are.png"
+                  src="/team-who-we-are.png"
                   alt="AXOVOC Team"
                   fill
                   className="object-cover"

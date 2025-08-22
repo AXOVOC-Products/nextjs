@@ -133,17 +133,17 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   // --- Image/Text Slide Section Data ---
   const slideSteps = [
     {
-      image: "/nextjs/smartwatch.png",
+      image: "/smartwatch.png",
       title: "Clarity over guess work.",
       desc: "Whether you’re chasing a personal record or staying strong for your family—uncertainty holds you back. Your smartwatch gives estimates, not truth. You can’t improve what you don’t measure. Healthspan needs more than just steps—it needs real data. Vortex measures what really matters — directly from your breath.",
     },
     {
-      image: "/nextjs/potential.png",
+      image: "/potential.png",
       title: "Training without clarity comes at a cost—wasted time, stalled progress, and missed potential.",
       desc: "Without direction, effort becomes exhausting—not empowering. Training plateaus when you repeat instead of adapt.",
     },
     {
-      image: "/nextjs/not-equal.png",
+      image: "/not-equal.png",
       title: "Not all metrics matter equally",
       desc: "In fitness and longevity, progress isn’t about counting more—it’s about measuring smarter. While steps, calories, and heart rate have their place, they don’t tell the full story. What actually matters is how efficiently your body uses oxygen, adapts to stress, and recovers over time. That’s where real performance—and long-term health—begin. With Vortex, you will measure VO2 Max, what truly connects everything: endurance, recovery, longevity—even how efficiently your body performs at rest and under stress.",
     },
@@ -280,7 +280,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
                 {/* Mobile images on right side */}
                 <div className="flex-shrink-0 ml-4 lg:hidden">
                   <div className="relative h-52 w-52">
-                    <Image src="/nextjs/pcb-board.png" alt="Technical device components" fill className="object-contain" />
+                    <Image src="/pcb-board.png" alt="Technical device components" fill className="object-contain" />
                   </div>
                 </div>
               </div>
@@ -289,13 +289,13 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Desktop positioned images */}
             <div className="hidden lg:block">
               <div className="absolute top-4 right-4 h-20 w-28">
-                <Image src="/nextjs/co2-sensor.png" alt="Technical device component" fill className="object-contain" />
+                <Image src="/co2-sensor.png" alt="Technical device component" fill className="object-contain" />
               </div>
               <div className="absolute -bottom-30 -right-16 h-44 w-52 overflow-hidden">
-                <Image src="/nextjs/flow-sensor.png" alt="Technical device component" fill className="object-cover" />
+                <Image src="/flow-sensor.png" alt="Technical device component" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-8 -left-16 h-52 w-80 overflow-hidden">
-                <Image src="/nextjs/pcb-board.png" alt="Technical device components" fill className="object-cover" />
+                <Image src="/pcb-board.png" alt="Technical device components" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -326,14 +326,14 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
                 {/* Mobile image on right side */}
                 <div className="flex-shrink-0 w-half flex items-center justify-center lg:hidden">
                   <div className="relative h-32 w-24 mb-2 flex items-center justify-center">
-                    <Image src="/nextjs/app-showcase.png" alt="App Showcase" fill className="object-contain" />
+                    <Image src="/app-showcase.png" alt="App Showcase" fill className="object-contain" />
                   </div>
                 </div>
               </div>
 
               <div className="hidden lg:block lg:absolute lg:top-0 lg:right-0 lg:h-52 lg:w-48">
                 <Image
-                  src="/nextjs/app-showcase-trim.png"
+                  src="/app-showcase-trim.png"
                   alt="App interface with data visualization"
                   fill
                   className="object-cover"
@@ -367,13 +367,13 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
                 {/* Mobile image on right side */}
                 <div className="flex-shrink-0 ml-4 lg:hidden">
                   <div className="relative h-32 w-24">
-                    <Image src="/nextjs/flying-man.png" alt="Athlete in motion" fill className="object-contain" />
+                    <Image src="/flying-man.png" alt="Athlete in motion" fill className="object-contain" />
                   </div>
                 </div>
               </div>
 
               <div className="hidden lg:block lg:absolute lg:bottom-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:h-80 lg:w-60 lg:-mb-20">
-                <Image src="/nextjs/flying-man.png" alt="Athlete in motion" fill className="object-contain" />
+                <Image src="/flying-man.png" alt="Athlete in motion" fill className="object-contain" />
               </div>
             </div>
           </div>
@@ -382,7 +382,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="bg-gray-50 py-20 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none select-none z-0">
-          <Image src="/nextjs/vortex-bg-1.png" alt="Background" fill className="object-cover" priority draggable={false} />
+          <Image src="/vortex-bg-1.png" alt="Background" fill className="object-cover" priority draggable={false} />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">Now, Let's Show You</h2>
@@ -416,7 +416,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Right Content - Device Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-                <Image src="/nextjs/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
+                <Image src="/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
               </div>
             </div>
           </div>
@@ -429,7 +429,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <div className="w-full lg:w-1/2 bg-[#181818] flex items-center justify-center relative h-1/2 lg:h-full">
             <div className="relative w-3/4 h-3/4 max-w-md max-h-[70vh] lg:max-h-[70vh]">
               <Image
-                src="/nextjs/wearing-mask.jpg"
+                src="/wearing-mask.jpg"
                 alt="Person wearing Vortex device"
                 fill
                 className="object-cover object-center"
@@ -470,7 +470,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="relative h-[60vh] overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
-          <Image src="/nextjs/pushup-track.jpg" alt="Runner on track" fill className="object-cover object-bottom" />
+          <Image src="/pushup-track.jpg" alt="Runner on track" fill className="object-cover object-bottom" />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         </div>
@@ -530,7 +530,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             <div className="relative w-full h-full flex items-center justify-center">
               {/* Main dashboard phone */}
               <div className="relative w-48 h-96 lg:w-72 lg:h-[600px] z-20">
-                <Image src="/nextjs/app-showcase.png" alt="Vortex Metrics Dashboard" fill className="object-contain" />
+                <Image src="/app-showcase.png" alt="Vortex Metrics Dashboard" fill className="object-contain" />
               </div>
             </div>
           </div>
@@ -552,7 +552,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 1 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/nextjs/finger-touching-light.jpg)' }}
+              style={{ backgroundImage: 'url(/finger-touching-light.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#14405a]/80 z-0"></div>
               <div className="relative z-10">
@@ -563,7 +563,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 2 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/nextjs/mobile-screen.jpg)' }}
+              style={{ backgroundImage: 'url(/mobile-screen.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
               <div className="relative z-10">
@@ -574,7 +574,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 3 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/nextjs/running-man.jpg)' }}
+              style={{ backgroundImage: 'url(/running-man.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
               <div className="relative z-10">
@@ -594,7 +594,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             <div className="relative w-[28rem] h-[28rem] lg:w-[38rem] lg:h-[38rem] flex flex-col items-center">
               {/* Main image */}
               <Image
-                src="/nextjs/Mask_2.png"
+                src="/Mask_2.png"
                 alt="Vortex Device"
                 fill
                 className="object-contain object-center"
@@ -603,7 +603,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               {/* Reflection */}
               <div className="absolute left-0 right-0 top-[95%] w-full h-1/2 pointer-events-none">
                 <Image
-                  src="/nextjs/Mask_2.png"
+                  src="/Mask_2.png"
                   alt="Vortex Device Reflection"
                   fill
                   className="object-contain scale-y-[-1]"
@@ -703,7 +703,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Center Device Image */}
             <div className="flex justify-center items-center">
               <div className="relative w-96 h-96">
-                <Image src="/nextjs/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
+                <Image src="/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
               </div>
             </div>
             {/* Right Features */}
@@ -741,7 +741,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Device image */}
             <div className="flex justify-center mb-12">
               <div className="relative w-80 h-80">
-                <Image src="/nextjs/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
+                <Image src="/Mask_1.png" alt="Vortex Device" fill className="object-contain" />
               </div>
             </div>
 
@@ -1420,7 +1420,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <div className="flex justify-center md:justify-end">
             <div className="relative w-[420px] h-[340px]  overflow-hidden bg-white shadow-[0_8px_32px_0_rgba(60,60,100,0.18),0_1.5px_8px_0_rgba(60,60,100,0.10)]">
               <Image
-                src="/nextjs/couple-exercising.jpg"
+                src="/couple-exercising.jpg"
                 alt="People exercising indoors"
                 fill
                 className="object-cover"
@@ -1467,14 +1467,14 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             <div className="flex gap-4 w-full max-w-xl flex-col sm:flex-row">
               <div className="flex-1 rounded-2xl shadow-lg overflow-hidden min-h-[120px]">
                 <img
-                  src="/nextjs/vo2-max-explanation.png"
+                  src="/vo2-max-explanation.png"
                   alt="The Ultimate Fitness and Health Signal: What is VO2 Max and Why it Matters?"
                   className="object-cover w-full h-32 sm:h-40"
                 />
               </div>
               <div className="flex-1 rounded-2xl shadow-lg overflow-hidden min-h-[120px] mt-4 sm:mt-0">
                 <img
-                  src="/nextjs/FAQ.png"
+                  src="/FAQ.png"
                   alt="FAQ"
                   className="object-cover w-full h-32 sm:h-40"
                 />
@@ -1517,7 +1517,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="w-full flex justify-center mb-10">
           <img
-            src="/nextjs/group-gym-pose.png"
+            src="/group-gym-pose.png"
             alt="Group of athletes in gym"
             className="rounded-3xl w-full max-w-6xl object-cover"
             style={{ aspectRatio: '2.5/1', maxHeight: 700 }}

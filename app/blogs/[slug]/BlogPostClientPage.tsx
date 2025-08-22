@@ -199,7 +199,7 @@ export default function BlogPostClientPage({ params }: BlogPostPageProps) {
                   <div className="flex-shrink-0 flex justify-center sm:justify-start">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center overflow-hidden shadow-lg">
                       <Image
-                        src="/nextjs/axovoc-circle-black.png"
+                        src="/axovoc-circle-black.png"
                         alt="AXOVOC"
                         width={80}
                         height={80}
