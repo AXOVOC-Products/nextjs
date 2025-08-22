@@ -47,7 +47,7 @@ export default function MissionPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">
                 Every breath tells a story.
               </h1>
-              <p className="text-2xl lg:text-3xl xl:text-4xl font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <p className="text-2xl lg:text-3xl xl:text-4xl font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-pulse">
                 We help you hear it!
               </p>
               
@@ -83,10 +83,10 @@ export default function MissionPage() {
       <section className="pt-24 lg:pt-32 pb-32 lg:pb-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black tracking-tight">
               The Challenges We All Face
             </h2>
-            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
               You want to train smarter, live healthier, and make the most of your time. But so often, the path feels unclear.
             </p>
           </div>
@@ -368,8 +368,9 @@ export default function MissionPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 lg:py-48 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 lg:py-48 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 lg:gap-20">
             {/* Left: Full-screen Image (3 columns) */}
             <div className="lg:col-span-3">
@@ -392,11 +393,11 @@ export default function MissionPage() {
               <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-black">Our Company Values</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-105">
                   <CardContent className="p-8 lg:p-10">
                     <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl">
-                        <Users className="w-8 h-8 text-blue-600" />
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl shadow-sm">
+                        <Users className="w-8 h-8 text-blue-600 drop-shadow-sm" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl font-bold mb-4 text-black">Customer First</h3>
@@ -406,11 +407,11 @@ export default function MissionPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-105">
                   <CardContent className="p-8 lg:p-10">
                     <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl">
-                        <Target className="w-8 h-8 text-purple-600" />
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl shadow-sm">
+                        <Target className="w-8 h-8 text-purple-600 drop-shadow-sm" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl font-bold mb-4 text-black">Accuracy</h3>
@@ -420,11 +421,11 @@ export default function MissionPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-105">
                   <CardContent className="p-8 lg:p-10">
                     <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-green-100 to-blue-100 rounded-xl">
-                        <Shield className="w-8 h-8 text-green-600" />
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-green-100 to-blue-100 rounded-xl shadow-sm">
+                        <Shield className="w-8 h-8 text-green-600 drop-shadow-sm" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl font-bold mb-4 text-black">Trust & Integrity</h3>
@@ -434,11 +435,11 @@ export default function MissionPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white">
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm hover:bg-white hover:scale-105">
                   <CardContent className="p-8 lg:p-10">
                     <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl">
-                        <Leaf className="w-8 h-8 text-emerald-600" />
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl shadow-sm">
+                        <Leaf className="w-8 h-8 text-emerald-600 drop-shadow-sm" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl font-bold mb-4 text-black">Simplicity & Sustainability</h3>
@@ -507,7 +508,7 @@ export default function MissionPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0 shadow-lg"
               >
                 Join us today
               </Button>
@@ -515,17 +516,17 @@ export default function MissionPage() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-10 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-lg"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-lg"
               >
                 Learn more
               </Button>
             </div>
             
             {/* Decorative Elements */}
-            <div className="mt-16 flex justify-center space-x-8 opacity-30">
-              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-              <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+            <div className="mt-16 flex justify-center space-x-8 opacity-30 animate-pulse">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
             </div>
           </div>
         </div>
