@@ -219,11 +219,11 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
                   <div className="h-20"></div>
                   {/* Square image */}
                   <div className="relative h-40 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/exercise-outdoors.jpg" alt="Woman sitting outdoors" fill className="object-cover" />
+                    <Image src="/exercise-outdoors.jpg" alt="Woman sitting outdoors" fill className="object-cover" />
                   </div>
                   {/* Landscape image */}
                   <div className="relative h-32 w-48 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/gym.jpg" alt="Person planking in gym" fill className="object-cover" />
+                    <Image src="/gym.jpg" alt="Person planking in gym" fill className="object-cover" />
                   </div>
                 </div>
 
@@ -231,11 +231,11 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
                 <div className="space-y-6">
                   {/* Square image on top */}
                   <div className="relative h-40 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/biking.jpg" alt="Cyclist training outdoors" fill className="object-cover" />
+                    <Image src="/biking.jpg" alt="Cyclist training outdoors" fill className="object-cover" />
                   </div>
                   {/* Portrait rectangular image */}
                   <div className="relative h-60 w-40 overflow-hidden shadow-xl shadow-gray-500/60">
-                    <Image src="/nextjs/woman-running.jpg" alt="Woman running" fill className="object-cover" />
+                    <Image src="/woman-running.jpg" alt="Woman running" fill className="object-cover" />
                   </div>
                 </div>
               </div>
