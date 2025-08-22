@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Search, Heart, Zap, FileText, Globe } from "lucide-react"
@@ -23,10 +23,6 @@ export default function BlogsPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState("Latest Blogs")
   const [searchQuery, setSearchQuery] = useState("")
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
-  const carouselRef = useRef<HTMLDivElement>(null)
 
   const featuredArticles = getFeaturedArticles()
   const blogPosts = getAllBlogPosts()
@@ -37,51 +33,6 @@ export default function BlogsPage() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + featuredArticles.length) % featuredArticles.length)
-  }
-
-  // Touch/Swipe handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true)
-    setStartX(e.pageX - (carouselRef.current?.offsetLeft || 0))
-    setScrollLeft(carouselRef.current?.scrollLeft || 0)
-  }
-
-  const handleMouseLeave = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return
-    e.preventDefault()
-    const x = e.pageX - (carouselRef.current?.offsetLeft || 0)
-    const walk = (x - startX) * 2
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = scrollLeft - walk
-    }
-  }
-
-  // Touch handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true)
-    setStartX(e.touches[0].pageX - (carouselRef.current?.offsetLeft || 0))
-    setScrollLeft(carouselRef.current?.scrollLeft || 0)
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return
-    const x = e.touches[0].pageX - (carouselRef.current?.offsetLeft || 0)
-    const walk = (x - startX) * 2
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = scrollLeft - walk
-    }
-  }
-
-  const handleTouchEnd = () => {
-    setIsDragging(false)
   }
 
   const filteredPosts = blogPosts.filter((post) => {
@@ -108,17 +59,7 @@ export default function BlogsPage() {
           </div>
           
           {/* Carousel Container */}
-          <div 
-            ref={carouselRef}
-            className="relative h-full overflow-hidden z-10 pt-2 cursor-grab active:cursor-grabbing"
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
+          <div className="relative h-full overflow-hidden z-10 pt-2">
             <div
               className="flex transition-transform duration-500 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -239,26 +180,26 @@ export default function BlogsPage() {
                 {categories.map((category) => {
                   const IconComponent = category.icon === "new" ? null : category.icon
                   return (
-                                         <button
-                       key={category.name}
-                       onClick={() => setSelectedCategory(category.name)}
-                       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
-                         selectedCategory === category.name 
-                           ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 shadow-sm" 
-                           : "hover:bg-gray-50 hover:shadow-sm"
-                       }`}
-                     >
-                       {category.icon === "new" ? (
-                         <span className={`px-2 py-1 text-xs font-bold rounded w-5 h-5 flex items-center justify-center ${
-                           selectedCategory === category.name 
-                             ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' 
-                             : 'bg-gray-600 text-white'
-                         }`}>new</span>
-                       ) : (
-                         IconComponent && <IconComponent className={`w-5 h-5 ${selectedCategory === category.name ? 'text-blue-600' : 'text-gray-600'}`} />
-                       )}
-                       <span className={`font-medium ${selectedCategory === category.name ? 'text-blue-700' : 'text-gray-800'}`}>{category.name}</span>
-                     </button>
+                    <button
+                      key={category.name}
+                      onClick={() => setSelectedCategory(category.name)}
+                      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
+                        selectedCategory === category.name 
+                          ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 shadow-sm" 
+                          : "hover:bg-gray-50 hover:shadow-sm"
+                      }`}
+                    >
+                      {category.icon === "new" ? (
+                        <span className={`px-2 py-1 text-xs font-bold rounded w-5 h-5 flex items-center justify-center ${
+                          selectedCategory === category.name 
+                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' 
+                            : 'bg-gray-600 text-white'
+                        }`}>new</span>
+                      ) : (
+                        IconComponent && <IconComponent className={`w-5 h-5 ${selectedCategory === category.name ? 'text-blue-600' : 'text-gray-600'}`} />
+                      )}
+                      <span className={`font-medium ${selectedCategory === category.name ? 'text-blue-700' : 'text-gray-800'}`}>{category.name}</span>
+                    </button>
                   )
                 })}
               </div>
