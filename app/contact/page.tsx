@@ -11,7 +11,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Link from "next/link"
 import { useState } from "react"
 import { FileText, Wrench, Users, Share2, Check, MessageCircle, Building2, Handshake, Mail, ArrowRight } from "lucide-react"
-
+import Footer from "@/components/footer"
+import { useRouter } from "next/navigation"
 
 import emailjs from "@emailjs/browser"
 import { useRef } from "react"
@@ -25,6 +26,7 @@ export default function ContactPage() {
 
   const form = useRef<HTMLFormElement>(null)
 
+  const router = useRouter()
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -241,6 +243,7 @@ export default function ContactPage() {
                 <Button 
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0 shadow-lg group"
+                  onClick={() => router.push("/#join-us")}
                 >
                   <span>Join our waitlist</span>
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -522,6 +525,8 @@ export default function ContactPage() {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
+    
   )
 }

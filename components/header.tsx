@@ -67,11 +67,12 @@ export default function Header() {
           {/* Desktop Right Section */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link
-              href="/"
+              href="/#join-us"
               className="px-6 py-2 rounded-full font-bold text-white text-sm transition-all hover:shadow-lg hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
               }}
+              
             >
               Pre-Order Now
             </Link>

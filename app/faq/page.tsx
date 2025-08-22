@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import { Search } from "lucide-react"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
-
+import Footer from "@/components/footer"
 const faqCategories = [
   {
     title: "Fundamentals of VO₂ max",
@@ -79,6 +79,7 @@ export default function FAQPage() {
   const totalQuestions = filteredCategories.reduce((sum, cat) => sum + cat.questions.length, 0)
 
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h1>
       <p className="text-gray-600 mb-8">Find quick answers to the most common questions about VO₂ max and Vortex.</p>
@@ -131,5 +132,7 @@ export default function FAQPage() {
         </div>
       )}
     </div>
+    <Footer />
+    </>
   )
 }

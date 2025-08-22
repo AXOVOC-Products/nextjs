@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronDown, Target, Zap, Heart, Users, Shield, Leaf, Activity, Smartphone } from "lucide-react"
 import { FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa"
-
+import Link from "next/link"
 const StravaIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
     <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.172" />
@@ -506,20 +506,19 @@ export default function MissionPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0 shadow-lg"
+              <Link 
+                href="/#join-us"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-3 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0 shadow-lg"
               >
                 Join us today
-              </Button>
-              
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-lg"
+              </Link>
+              <Link 
+                
+                href="/#features"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-12 py-3 rounded-full text-lg font-semibold transition-all hover:shadow-lg"
               >
                 Learn more
-              </Button>
+              </Link>
             </div>
             
             {/* Decorative Elements */}

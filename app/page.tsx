@@ -1,16 +1,55 @@
+
 "use client"
+import { SignalsCarousel } from "@/components/signals-carousel"
 
 import Image from "next/image"
 import { FaBluetooth, FaFeather, FaMobileAlt, FaChartBar, FaBullseye, FaClock } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { FaYoutube, FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+
+import emailjs from "@emailjs/browser";
+import { JoinUsForm } from "@/components/join-us-form";
+import Footer from "@/components/footer"
+import ReviewCarousel from "@/components/ReviewCarousel";
+import ScrollSection from "@/components/scroll-section"; 
+
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState({ left: false, middle: false, right: false })
   const [scrollTextIndex, setScrollTextIndex] = useState(0)
   const sectionRef = useRef<HTMLDivElement>(null)
   const scrollSectionRef = useRef<HTMLDivElement>(null)
+
+  // emailjs consts
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+
+const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  if (!form.current || isSubmitting || isSubmitted) return;
+
+  setIsSubmitting(true);
+  emailjs.sendForm("service_test", "template_592mftc", form.current, "XMhXHlRkawb8MpODV").then(
+    () => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      alert("Message sent!");
+      form.current?.reset();
+      setTimeout(() => setIsSubmitted(false), 3000);
+    },
+    () => {
+      setIsSubmitting(false);
+      alert("Failed to send message.");
+    }
+  );
+};
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,29 +73,12 @@ export default function HomePage() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!scrollSectionRef.current) return
 
-      const rect = scrollSectionRef.current.getBoundingClientRect()
-      const sectionHeight = scrollSectionRef.current.offsetHeight
-      const viewportHeight = window.innerHeight
-
-      // Calculate scroll progress through the section
-      const scrollProgress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (sectionHeight + viewportHeight)))
-
-      // Change text when scrolled 40% through the section
-      if (scrollProgress < 0.4) {
-        setScrollTextIndex(0)
-      } else {
-        setScrollTextIndex(1)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
+  const StravaIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.172" />
+  </svg>
+);
   const scrollTexts = [
     {
       content: (
@@ -89,8 +111,30 @@ export default function HomePage() {
     },
   ]
 
+  // --- Image/Text Slide Section Data ---
+  const slideSteps = [
+    {
+      image: "/nextjs/smartwatch.png",
+      title: "Clarity over guess work.",
+      desc: "Whether you’re chasing a personal record or staying strong for your family—uncertainty holds you back. Your smartwatch gives estimates, not truth. You can’t improve what you don’t measure. Healthspan needs more than just steps—it needs real data. Vortex measures what really matters — directly from your breath.",
+    },
+    {
+      image: "/nextjs/potential.png",
+      title: "Training without clarity comes at a cost—wasted time, stalled progress, and missed potential.",
+      desc: "Without direction, effort becomes exhausting—not empowering. Training plateaus when you repeat instead of adapt.",
+    },
+    {
+      image: "/nextjs/not-equal.png",
+      title: "Not all metrics matter equally",
+      desc: "In fitness and longevity, progress isn’t about counting more—it’s about measuring smarter. While steps, calories, and heart rate have their place, they don’t tell the full story. What actually matters is how efficiently your body uses oxygen, adapts to stress, and recovers over time. That’s where real performance—and long-term health—begin. With Vortex, you will measure VO2 Max, what truly connects everything: endurance, recovery, longevity—even how efficiently your body performs at rest and under stress.",
+    },
+  ];
+  const [activeStep, setActiveStep] = useState(0);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+
   return (
-    <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
@@ -121,6 +165,9 @@ export default function HomePage() {
                 style={{
                   background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
                 }}
+                onClick={() => {
+                  document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Pre-Order Now
               </Button>
@@ -128,6 +175,9 @@ export default function HomePage() {
                 size="lg"
                 variant="outline"
                 className="w-auto max-w-fit border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-4 text-lg rounded-full font-medium transition-colors bg-transparent"
+                onClick={() => {
+                  document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Learn More
               </Button>
@@ -181,7 +231,7 @@ export default function HomePage() {
       </div>
 
       {/* Animated feature cards section */}
-      <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div id="features" ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Left Card - Performance Ready - Now spans 2 columns */}
           <div
@@ -353,7 +403,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
+      
       <div ref={scrollSectionRef} className="bg-[#181818] min-h-[100vh] relative overflow-hidden">
         <div className="sticky top-0 h-screen flex flex-col lg:flex-row">
           {/* Left Side - Person wearing mask (fixed) */}
@@ -473,6 +523,50 @@ export default function HomePage() {
         <div className="h-px bg-white w-full"></div>
       </div>
 
+      {/* Three Steps to Clarity Section */}
+      <section className="bg-[#111] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-16">
+            Three Steps to <span className="bg-blue-500 text-white italic px-3 py-1 rounded">Clarity:</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div
+              className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: 'url(/finger-touching-light.jpg)' }}
+            >
+              <div className="absolute inset-0 bg-[#14405a]/80 z-0"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-4">1. Power up</h3>
+                <p className="text-lg text-white mb-0">Switch on your Vortex analyzer<br />and get ready for accurate<br />performance testing in seconds.</p>
+              </div>
+            </div>
+            {/* Step 2 */}
+            <div
+              className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: 'url(/mobile-screen.jpg)' }}
+            >
+              <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-4">2. Connect &amp; Calibrate</h3>
+                <p className="text-lg text-white mb-0">Pair the analyzer with your mobile<br />device, choose your preferred testing<br />protocol, and follow the guided<br />on-screen calibration for peak accuracy.</p>
+              </div>
+            </div>
+            {/* Step 3 */}
+            <div
+              className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: 'url(/running-man.jpg)' }}
+            >
+              <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-4">3. Start assessment.</h3>
+                <p className="text-lg text-white mb-0">Secure the analyzer with the<br />adjustable head strap and begin<br />your protocol — capturing precise<br />VO<sub>2</sub> Max and metabolic data to<br />power your performance insights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Vortex Performance Section */}
       <div className="bg-[#181818] min-h-screen relative overflow-hidden">
         <div className="h-screen flex flex-col lg:flex-row items-center">
@@ -530,6 +624,9 @@ export default function HomePage() {
                 style={{
                   background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
                 }}
+                onClick={() => {
+                  document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Pre-Order Now
               </Button>
@@ -537,6 +634,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
 
       {/* Product Features Section */}
       <div className="bg-gray-50 py-20 relative overflow-hidden">
@@ -1271,6 +1369,171 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+    {/* Understanding Your Body Section */}
+    <div className="bg-gray-50 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              Take the Next Step in
+              <br />
+              Understanding Your Body
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto md:mx-0">
+              Don’t wait for a lab appointment or rely on estimates. With Vortex, every breath becomes a source of insight into your fitness, recovery, and long-term health.
+            </p>
+            <div className="flex justify-center md:justify-start">
+              <button
+                className="px-10 py-4 rounded-full font-bold text-white text-xl shadow-lg transition-all hover:scale-105 focus:outline-none"
+                style={{
+                  background: "linear-gradient(90deg, #3399ff 0%, #8533ff 100%)",
+                }}
+                onClick={() => {
+                  document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Pre-Order Now
+              </button>
+            </div>
+          </div>
+          {/* Right Image */}
+          <div className="flex justify-center md:justify-end">
+            <div className="relative w-[420px] h-[340px]  overflow-hidden bg-white shadow-[0_8px_32px_0_rgba(60,60,100,0.18),0_1.5px_8px_0_rgba(60,60,100,0.10)]">
+              <Image
+                src="/nextjs/couple-exercising.jpg"
+                alt="People exercising indoors"
+                fill
+                className="object-cover"
+                priority={false}
+                draggable={false}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+{/* {Scroll lock area} */}
+
+    <ScrollSection
+  slideSteps={slideSteps}
+/>
+
+
+
+
+    {/* Signals Carousel Section */}
+    <SignalsCarousel />
+
+    {/* Want to Learn More Section */}
+    <section className="bg-white py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Left: Images */}
+          <div className="flex flex-col items-center md:items-start gap-8 w-full">
+            {/* Top image (YouTube video preview) */}
+            <div className="w-full max-w-xl aspect-video rounded-3xl shadow-xl overflow-hidden bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/TRXLKuoX9WA?si=pWYNx8JspK9s9da6"
+                title="What is VO2 Max? Understanding Your Cardiorespiratory Fitness"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full min-h-[200px]"
+                style={{ background: 'transparent' }}
+              ></iframe>
+            </div>
+            {/* Bottom row: 2 images */}
+            <div className="flex gap-4 w-full max-w-xl flex-col sm:flex-row">
+              <div className="flex-1 rounded-2xl shadow-lg overflow-hidden min-h-[120px]">
+                <img
+                  src="/nextjs/vo2-max-explanation.png"
+                  alt="The Ultimate Fitness and Health Signal: What is VO2 Max and Why it Matters?"
+                  className="object-cover w-full h-32 sm:h-40"
+                />
+              </div>
+              <div className="flex-1 rounded-2xl shadow-lg overflow-hidden min-h-[120px] mt-4 sm:mt-0">
+                <img
+                  src="/nextjs/FAQ.png"
+                  alt="FAQ"
+                  className="object-cover w-full h-32 sm:h-40"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center h-full gap-12">
+            <div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Want to learn more?</h2>
+              <p className="text-lg text-gray-700 mb-4">
+                Understanding your body doesn’t need to feel complicated. Whether you’re just starting out or you’ve been training for years, our <b>FAQs</b> cover the most common questions in simple terms, while our <b>Blogs</b> take a deeper dive into the science behind performance, health, and longevity. And if you prefer to learn visually, our <b>YouTube Channel</b> brings the science to life with demonstrations, explainers, and real-world applications. Explore at your own pace and turn curiosity into clarity.
+              </p>
+            </div>
+            <span className="block text-lg font-semibold text-gray-800 mb-0">Follow us</span>
+            <div className="flex flex-row items-center gap-8 mt-0">
+              <a href="https://www.youtube.com/@axovoc" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <FaYoutube className="w-8 h-8 text-black hover:text-blue-600" />
+              </a>
+              <a href="https://www.strava.com/clubs/axovoc/" target="_blank" rel="noopener noreferrer" aria-label="Strava">
+                <StravaIcon className="w-8 h-8 text-black hover:text-blue-600" />
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <FaLinkedinIn className="w-8 h-8 text-black hover:text-blue-600" />
+              </a>
+              <a href="https://www.instagram.com/axovoc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FaInstagram className="w-8 h-8 text-black hover:text-blue-600" />
+              </a>
+              <a href="https://www.facebook.com/axovoc" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FaFacebookF className="w-8 h-8 text-black hover:text-blue-600" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    {/* Large Image with Centered Text and Pre-Order Button Section */}
+    <section className="bg-white py-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="w-full flex justify-center mb-10">
+          <img
+            src="/nextjs/group-gym-pose.png"
+            alt="Group of athletes in gym"
+            className="rounded-3xl w-full max-w-6xl object-cover"
+            style={{ aspectRatio: '2.5/1', maxHeight: 700 }}
+            draggable={false}
+          />
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-black mb-6">
+          “You’ve trained hard. You’ve waited for answers.<br />
+          Now get the clarity your effort deserves.”
+        </h2>
+        <p className="text-lg text-center text-gray-700 mb-8">
+          Pre-order Vortex today and be part of the future of fitness and longevity tracking.
+        </p>
+        <Button
+          size="lg"
+          className="w-auto max-w-fit px-6 py-2 rounded-full font-bold text-white text-sm transition-all hover:shadow-lg hover:scale-105"
+          style={{
+            background: "linear-gradient(135deg, #3399ff 0%, #8533ff 50%, #8b5cf6 100%)",
+          }}
+          onClick={() => {
+          document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' });
+  }}
+        >
+          Pre-Order Now
+        </Button>
+      </div>
+    </section>
+
+    {/* Join Us Form */}
+     
+    <JoinUsForm />
+    <Footer />
+    
+  </div>
   )
 }
+
+
