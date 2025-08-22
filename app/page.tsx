@@ -533,7 +533,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 1 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/finger-touching-light.jpg)' }}
+              style={{ backgroundImage: 'url(/nextjs/finger-touching-light.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#14405a]/80 z-0"></div>
               <div className="relative z-10">
@@ -544,7 +544,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 2 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/mobile-screen.jpg)' }}
+              style={{ backgroundImage: 'url(/nextjs/mobile-screen.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
               <div className="relative z-10">
@@ -555,7 +555,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             {/* Step 3 */}
             <div
               className="rounded-2xl p-8 flex flex-col justify-between shadow-xl min-h-[340px] relative overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: 'url(/running-man.jpg)' }}
+              style={{ backgroundImage: 'url(/nextjs/running-man.jpg)' }}
             >
               <div className="absolute inset-0 bg-[#181818]/80 z-0"></div>
               <div className="relative z-10">
