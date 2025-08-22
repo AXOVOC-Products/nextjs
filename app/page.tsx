@@ -73,6 +73,25 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     return () => observer.disconnect()
   }, [])
 
+  // Handle hash-based scrolling when page loads
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.substring(1) // Remove the # symbol
+      
+      // Wait for the page to fully load
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }, 100) // Small delay to ensure page is rendered
+    }
+  }, [])
+
 
   const StravaIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
