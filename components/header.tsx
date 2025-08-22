@@ -95,7 +95,7 @@ export default function Header() {
               >
                 <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
               </Link>
-              <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/in/iamtaruntyagi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
               </Link>
               <Link
@@ -176,7 +176,7 @@ export default function Header() {
                 >
                   <StravaIcon className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
                 </Link>
-                <Link href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/iamtaruntyagi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-black hover:text-blue-600 cursor-pointer" />
                 </Link>
                 <Link

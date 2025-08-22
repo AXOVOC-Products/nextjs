@@ -38,7 +38,7 @@ export default function Footer() {
           <Link href="https://www.strava.com/clubs/axovoc/" target="_blank" aria-label="Strava">
             <StravaIcon className="w-6 h-6 text-black hover:text-blue-600" />
           </Link>
-          <Link href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <Link href="https://www.linkedin.com/in/iamtaruntyagi/" target="_blank" aria-label="LinkedIn">
             <FaLinkedinIn className="w-6 h-6 text-black hover:text-blue-600" />
           </Link>
           <Link href="https://www.instagram.com/axovoc/" target="_blank" aria-label="Instagram">

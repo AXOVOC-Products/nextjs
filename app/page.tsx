@@ -1477,7 +1477,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               <a href="https://www.strava.com/clubs/axovoc/" target="_blank" rel="noopener noreferrer" aria-label="Strava">
                 <StravaIcon className="w-8 h-8 text-black hover:text-blue-600" />
               </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/iamtaruntyagi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FaLinkedinIn className="w-8 h-8 text-black hover:text-blue-600" />
               </a>
               <a href="https://www.instagram.com/axovoc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
