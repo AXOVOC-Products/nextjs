@@ -357,7 +357,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "The Curve We Can Bend: Why VO₂ Max Falls With Age—and How to Fight Back",
         type: "article",
-        thumbnail: "/nextjs/vo2max-aging.jpg",
+        thumbnail: "/nextjs/vo2-age-decline.jpg",
         slug: "why-vo2-max-declines-with-age-and-how-to-improve-it"
       },
       {
@@ -760,7 +760,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Why VO₂ Max Declines With Age (and 9 Proven Ways to Raise It)",
         type: "article",
-        thumbnail: "/nextjs/vo2max-aging.jpg",
+        thumbnail: "/nextjs/vo2-age-decline.jpg",
         slug: "why-vo2-max-declines-with-age-and-how-to-improve-it"
       },
       {
@@ -772,7 +772,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Understanding Your Cardiorespiratory Fitness",
         type: "video",
-        thumbnail: "/nextjs/what-is-vo2-max.png",
+        thumbnail: "/nextjs/yt-what-is-vo2-max.png",
         duration: "4:32",
         url: "https://www.youtube.com/watch?v=TRXLKuoX9WA"
       }
