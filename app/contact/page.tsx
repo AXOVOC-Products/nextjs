@@ -87,114 +87,124 @@ export default function ContactPage() {
 
           {/* Social Media Cards - Made Longer */}
           <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 lg:gap-10 mb-16 lg:mb-20 max-w-7xl mx-auto">
-            {/* YouTube Card */}
-            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
-              <CardContent className="p-0">
-                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-red-50 to-red-100">
-                  <Image
-                    src="/axovoc-yt.jpg"
-                    alt="YouTube Channel"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 1280px) 100vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-                    <div className="text-white">
-                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Explore VO₂ science on YouTube</h3>
-                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Watch our latest videos and tutorials</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                         {/* YouTube Card */}
+             <Link href="https://www.youtube.com/@axovoc" target="_blank" rel="noopener noreferrer">
+               <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
+                 <CardContent className="p-0">
+                   <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-red-50 to-red-100">
+                     <Image
+                       src="/axovoc-yt.jpg"
+                       alt="YouTube Channel"
+                       fill
+                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                       sizes="(max-width: 1280px) 100vw, 20vw"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 flex items-end p-8">
+                       <div className="text-white">
+                         <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Explore VO₂ science on YouTube</h3>
+                         <p className="text-sm lg:text-base opacity-90 leading-relaxed">Watch our latest videos and tutorials</p>
+                       </div>
+                     </div>
+                   </div>
+                 </CardContent>
+               </Card>
+             </Link>
 
 
-            {/* Strava Card */}
-            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
-              <CardContent className="p-0">
-                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-orange-50 to-orange-100">
-                  <Image
-                    src="/axovoc-strava.jpg"
-                    alt="Strava Community"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 1280px) 100vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-                    <div className="text-white">
-                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join our Strava community</h3>
-                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Track your progress with fellow athletes</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                         {/* Strava Card */}
+             <Link href="https://www.strava.com/clubs/axovoc/" target="_blank" rel="noopener noreferrer">
+               <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
+                 <CardContent className="p-0">
+                   <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-orange-50 to-orange-100">
+                     <Image
+                       src="/axovoc-strava.jpg"
+                       alt="Strava Community"
+                       fill
+                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                       sizes="(max-width: 1280px) 100vw, 20vw"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 flex items-end p-8">
+                       <div className="text-white">
+                         <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join our Strava community</h3>
+                         <p className="text-sm lg:text-base opacity-90 leading-relaxed">Track your progress with fellow athletes</p>
+                       </div>
+                     </div>
+                   </div>
+                 </CardContent>
+               </Card>
+             </Link>
 
 
-            {/* LinkedIn Card */}
-            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
-              <CardContent className="p-0">
-                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-blue-100">
-                  <Image
-                    src="/axovoc-linkedin.png"
-                    alt="LinkedIn Network"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 1280px) 100vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-                    <div className="text-white">
-                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Connect on LinkedIn</h3>
-                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Network with professionals and experts</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                         {/* LinkedIn Card */}
+             <Link href="https://www.linkedin.com/in/iamtaruntyagi/" target="_blank" rel="noopener noreferrer">
+               <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
+                 <CardContent className="p-0">
+                   <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-blue-100">
+                     <Image
+                       src="/axovoc-linkedin.png"
+                       alt="LinkedIn Network"
+                       fill
+                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                       sizes="(max-width: 1280px) 100vw, 20vw"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 flex items-end p-8">
+                       <div className="text-white">
+                         <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Connect on LinkedIn</h3>
+                         <p className="text-sm lg:text-base opacity-90 leading-relaxed">Network with professionals and experts</p>
+                       </div>
+                     </div>
+                   </div>
+                 </CardContent>
+               </Card>
+             </Link>
 
 
-            {/* Instagram Card */}
-            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
-              <CardContent className="p-0">
-                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-purple-50 to-pink-100">
-                  <Image
-                    src="/axovoc-insta.png"
-                    alt="Instagram Feed"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 1280px) 100vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-                    <div className="text-white">
-                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Follow on Instagram</h3>
-                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">See our daily updates and stories</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                         {/* Instagram Card */}
+             <Link href="https://www.instagram.com/axovoc/" target="_blank" rel="noopener noreferrer">
+               <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
+                 <CardContent className="p-0">
+                   <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-purple-50 to-pink-100">
+                     <Image
+                       src="/axovoc-insta.png"
+                       alt="Instagram Feed"
+                       fill
+                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                       sizes="(max-width: 1280px) 100vw, 20vw"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 flex items-end p-8">
+                       <div className="text-white">
+                         <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Follow on Instagram</h3>
+                         <p className="text-sm lg:text-base opacity-90 leading-relaxed">See our daily updates and stories</p>
+                       </div>
+                     </div>
+                   </div>
+                 </CardContent>
+               </Card>
+             </Link>
 
 
-            {/* Facebook Card */}
-            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
-              <CardContent className="p-0">
-                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-indigo-100">
-                  <Image
-                    src="/axovoc-fb.jpg"
-                    alt="Facebook Community"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 1280px) 100vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-                    <div className="text-white">
-                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join Facebook community</h3>
-                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Engage in discussions and share experiences</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                         {/* Facebook Card */}
+             <Link href="https://www.facebook.com/axovoc" target="_blank" rel="noopener noreferrer">
+               <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
+                 <CardContent className="p-0">
+                   <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-indigo-100">
+                     <Image
+                       src="/axovoc-fb.jpg"
+                       alt="Facebook Community"
+                       fill
+                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                       sizes="(max-width: 1280px) 100vw, 20vw"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 flex items-end p-8">
+                       <div className="text-white">
+                         <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join Facebook community</h3>
+                         <p className="text-sm lg:text-base opacity-90 leading-relaxed">Engage in discussions and share experiences</p>
+                       </div>
+                     </div>
+                   </div>
+                 </CardContent>
+               </Card>
+             </Link>
           </div>
 
           {/* Waitlist Subscription Section - Full Width */}
