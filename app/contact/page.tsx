@@ -1,7 +1,8 @@
 "use client"
 
-import type React from "react"
 
+import type React from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,21 +10,26 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import Link from "next/link"
 import { useState } from "react"
-import { FileText, Wrench, Users, Share2, Check } from "lucide-react"
+import { FileText, Wrench, Users, Share2, Check, MessageCircle, Building2, Handshake, Mail, ArrowRight } from "lucide-react"
+
 
 import emailjs from "@emailjs/browser"
 import { useRef } from "react"
+
 
 export default function ContactPage() {
   const [selectedInquiry, setSelectedInquiry] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+
   const form = useRef<HTMLFormElement>(null)
+
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!form.current || isSubmitting || isSubmitted) return
+
 
     setIsSubmitting(true)
     // Axovoc: ("service_axovoc", "template_wcqq2rp", form.current, "F7O73kEPRyUeLudzX")
@@ -45,12 +51,14 @@ export default function ContactPage() {
     )
   }
 
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
   }
+
 
   const handleCardClick = (inquiryType: string) => {
     if (inquiryType === "stay-connected") {
@@ -61,82 +69,125 @@ export default function ContactPage() {
     }
   }
 
+
   return (
-    <div id="top" className="bg-gray-100 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div id="top" className="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Stay Connected Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">Stay Connected</h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12">
+        <div className="text-center mb-20 lg:mb-24">
+          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 mb-8 lg:mb-10 tracking-tight leading-tight">
+            Stay Connected
+          </h1>
+          <p className="text-xl lg:text-2xl text-gray-600 max-w-5xl mx-auto mb-16 lg:mb-20 leading-relaxed font-light">
             Follow Axovoc on your favorite platforms to learn, share, and breathe with us.
           </p>
 
-          {/* Social Media Cards */}
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 mb-12 max-w-6xl mx-auto">
+
+          {/* Social Media Cards - Made Longer */}
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 lg:gap-10 mb-16 lg:mb-20 max-w-7xl mx-auto">
             {/* YouTube Card */}
-            <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden rounded-3xl">
+            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-red-50 to-red-100">
-                  <img src="/nextjs/axovoc-yt.jpg" alt="YouTube Channel" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-red-50 to-red-100">
+                  <Image
+                    src="/nextjs/axovoc-yt.jpg"
+                    alt="YouTube Channel"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 1280px) 100vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg mb-1">Explore VO₂ science on YouTube</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Explore VO₂ science on YouTube</h3>
+                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Watch our latest videos and tutorials</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
 
             {/* Strava Card */}
-            <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden rounded-3xl">
+            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-orange-50 to-orange-100">
-                  <img src="/nextjs/axovoc-strava.jpg" alt="Strava Community" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-orange-50 to-orange-100">
+                  <Image
+                    src="/nextjs/axovoc-strava.jpg"
+                    alt="Strava Community"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 1280px) 100vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg mb-1">Want to join our Strava community?</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join our Strava community</h3>
+                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Track your progress with fellow athletes</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
 
             {/* LinkedIn Card */}
-            <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden rounded-3xl">
+            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-blue-50 to-blue-100">
-                  <img src="/nextjs/axovoc-linkedin.png" alt="LinkedIn Network" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-blue-100">
+                  <Image
+                    src="/nextjs/axovoc-linkedin.png"
+                    alt="LinkedIn Network"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 1280px) 100vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg mb-1">Let's connect on LinkedIn!</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Connect on LinkedIn</h3>
+                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Network with professionals and experts</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
 
             {/* Instagram Card */}
-            <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden rounded-3xl">
+            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-purple-50 to-pink-100">
-                  <img src="/nextjs/axovoc-insta.png" alt="Instagram Feed" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-purple-50 to-pink-100">
+                  <Image
+                    src="/nextjs/axovoc-insta.png"
+                    alt="Instagram Feed"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 1280px) 100vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg mb-1">Follow Axovoc on Instagram</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Follow on Instagram</h3>
+                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">See our daily updates and stories</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
+
             {/* Facebook Card */}
-            <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden rounded-3xl">
+            <Card className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden rounded-3xl border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-blue-50 to-indigo-100">
-                  <img src="/nextjs/axovoc-fb.jpg" alt="Facebook Community" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div className="relative h-96 lg:h-[420px] bg-gradient-to-br from-blue-50 to-indigo-100">
+                  <Image
+                    src="/nextjs/axovoc-fb.jpg"
+                    alt="Facebook Community"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 1280px) 100vw, 20vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg mb-1">Join the conversation on Facebook</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl mb-3 leading-tight">Join Facebook community</h3>
+                      <p className="text-sm lg:text-base opacity-90 leading-relaxed">Engage in discussions and share experiences</p>
                     </div>
                   </div>
                 </div>
@@ -144,17 +195,62 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          {/* Email Subscription */}
-          <div className="max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4 p-6 bg-white rounded-2xl shadow-lg">
-              <Input
-                type="email"
-                placeholder="Enter your email to join our waitlist"
-                className="flex-1 text-lg py-6 px-6 border-gray-200 rounded-xl"
-              />
-              <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-6 rounded-xl text-lg font-medium">
-                Subscribe
-              </Button>
+          {/* Waitlist Subscription Section - Full Width */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-gray-200">
+            <div className="text-center space-y-8">
+              {/* Icon and Heading */}
+              <div className="flex justify-center">
+                <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-lg">
+                  <Mail className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
+                  Be the first to know
+                </h2>
+                <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                  Join our exclusive waitlist and get early access to Vortex updates, exclusive content, and special offers.
+                </p>
+              </div>
+
+              {/* Benefits List */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Early access</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Exclusive content</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Special offers</span>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full text-lg font-semibold transition-all hover:shadow-xl hover:scale-105 border-0 shadow-lg group"
+                >
+                  <span>Join our waitlist</span>
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+
+              {/* Trust Indicator */}
+              <p className="text-sm text-gray-500">
+                No spam, unsubscribe anytime. We respect your privacy.
+              </p>
             </div>
           </div>
         </div>
@@ -162,143 +258,173 @@ export default function ContactPage() {
         {/* Information Sections */}
         <div className="space-y-24">
           {/* Have a Question Section */}
-          <section className="bg-white rounded-3xl p-8 lg:p-16 shadow-lg">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-16">Have a Question?</h2>
+          <section className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-lg border border-gray-200">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-12">Have a Question?</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <img src="/nextjs/FAQ.png" alt="FAQ blocks" className="w-full h-80 object-cover rounded-2xl shadow-lg" />
+                <div className="relative h-80 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl shadow-lg overflow-hidden">
+                  <Image
+                    src="/nextjs/FAQ.png"
+                    alt="FAQ blocks"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-black/10"></div>
+                </div>
               </div>
               <div className="order-1 lg:order-2 space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800">
                   We might already have the answer for you!
                 </h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Browse our Frequently Asked Questions to find quick solutions, device info, and VO₂ insights — no wait
                   time required.
                 </p>
-                <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-6 rounded-xl text-lg font-medium">
-                  Explore FAQs
-                </Button>
+                <div className="pt-4">
+                  <Link href="/faq">
+                    <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-6 rounded-xl text-lg font-medium transition-all hover:shadow-lg">
+                      Explore FAQs
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
 
           {/* Curious about VO2 Science Section */}
-          <section className="bg-white rounded-3xl p-8 lg:p-16 shadow-lg">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-16">
+          <section className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-lg border border-gray-200">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-12">
               Curious about VO₂ Science?
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <img
-                  src="/nextjs/featured-vo2-max.png"
-                  alt="VO₂ Science Featured Content"
-                  className="w-full h-80 object-cover rounded-2xl shadow-xl"
-                />
+                <div className="relative h-80 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl shadow-xl overflow-hidden">
+                  <Image
+                    src="/nextjs/featured-vo2-max.png"
+                    alt="VO₂ Science Featured Content"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-black/10"></div>
+                </div>
               </div>
               <div className="space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800">Read our Blogs!</h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800">Read our Blogs!</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Dive into our latest blog posts to learn how the Vortex device works, why respiratory data matters,
                   and what you can do with your breath.
                 </p>
-                <Link href="/blogs">
-                  <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-4 rounded-xl text-lg font-medium">
-                    Read Blogs
-                  </Button>
-                </Link>
+                <div className="pt-4">
+                  <Link href="/blogs">
+                    <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-6 rounded-xl text-lg font-medium transition-all hover:shadow-lg">
+                      Read Blogs
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
 
           {/* What is Vortex Section */}
-          <section className="bg-white rounded-3xl p-8 lg:p-16 shadow-lg">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-16">What is Vortex?</h2>
+          <section className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-lg border border-gray-200">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-12">What is Vortex?</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-black rounded-2xl p-12 flex items-center justify-center h-80">
-                  <img
+                <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-12 flex items-center justify-center h-80 shadow-xl">
+                  <Image
                     src="/nextjs/axovoc-logo-trim.png"
                     alt="AXOVOC Logo"
-                    className="w-full h-full max-w-sm max-h-48 object-contain filter invert"
+                    width={200}
+                    height={120}
+                    className="object-contain filter invert"
                   />
                 </div>
               </div>
               <div className="space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800">Learn more about the Vortex Device</h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800">Learn more about the Vortex Device</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Discover how Vortex measures your VO₂ in real time — and why it's changing the way we understand human
                   performance.
                 </p>
-                <Link href="/">
-                  <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-4 rounded-xl text-lg font-medium">
-                    Explore the Products
-                  </Button>
-                </Link>
+                <div className="pt-4">
+                  <Link href="/">
+                    <Button className="bg-gray-700 hover:bg-gray-800 text-white px-8 py-6 rounded-xl text-lg font-medium transition-all hover:shadow-lg">
+                      Explore Homepage
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Contact Options Section */}
-          <section className="bg-white rounded-3xl p-8 lg:p-16 shadow-lg">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-16">
+          {/* Contact Options Section - 2x2 Grid with Centered Layout */}
+          <section className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-lg border border-gray-200">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-12">
               Don't see your questions answered?
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {/* Have an inquiry Card - Spans 2 of 3 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* General Inquiry Card */}
               <Card
-                className="group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-3xl p-10 lg:col-span-2 h-40"
+                className="group cursor-pointer hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-3xl p-8 border-0 shadow-lg bg-white/60 backdrop-blur-sm"
                 onClick={() => handleCardClick("General Inquiry")}
               >
-                <CardContent className="p-0 flex items-center gap-6 h-full">
-                  <div className="w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-10 h-10 text-gray-700" />
+                <CardContent className="p-0 text-center space-y-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center shadow-lg">
+                    <MessageCircle className="w-10 h-10 text-blue-600" />
                   </div>
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">Have an inquiry?</h3>
-                    <p className="text-gray-600">Send us a message and we will get back to you ASAP</p>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">General Inquiry</h3>
+                    <p className="text-gray-600 leading-relaxed">Have questions about our products, services, or company? Send us a message and we'll get back to you as soon as possible.</p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Technical Support Card - Single column */}
+              {/* Technical Support Card */}
               <Card
-                className="group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-3xl p-10 h-40"
+                className="group cursor-pointer hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-3xl p-8 border-0 shadow-lg bg-white/60 backdrop-blur-sm"
                 onClick={() => handleCardClick("Technical Support")}
               >
-                <CardContent className="p-0 text-center space-y-4 flex flex-col justify-center h-full">
-                  <div className="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <Wrench className="w-8 h-8 text-gray-700" />
+                <CardContent className="p-0 text-center space-y-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Wrench className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800">Technical Support</h3>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Technical Support</h3>
+                    <p className="text-gray-600 leading-relaxed">Need help with your Vortex device or experiencing technical issues? Our support team is here to assist you.</p>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* For Business Card - Single column */}
+              {/* Business Collaboration Card */}
               <Card
-                className="group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-3xl p-10 h-40"
+                className="group cursor-pointer hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-3xl p-8 border-0 shadow-lg bg-white/60 backdrop-blur-sm"
                 onClick={() => handleCardClick("Business Collaboration")}
               >
-                <CardContent className="p-0 text-center space-y-4 flex flex-col justify-center h-full">
-                  <div className="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <Users className="w-8 h-8 text-gray-700" />
+                <CardContent className="p-0 text-center space-y-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Building2 className="w-10 h-10 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800">For Business</h3>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Business Collaboration</h3>
+                    <p className="text-gray-600 leading-relaxed">Interested in partnerships, bulk orders, or integrating Vortex into your business? Let's explore opportunities together.</p>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Stay Connected Card - Spans 2 of 3 columns */}
+              {/* Stay Connected Card */}
               <Card
-                className="group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-3xl p-10 lg:col-span-2 h-40"
+                className="group cursor-pointer hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-3xl p-8 border-0 shadow-lg bg-white/60 backdrop-blur-sm"
                 onClick={() => handleCardClick("stay-connected")}
               >
-                <CardContent className="p-0 flex items-center gap-6 h-full">
-                  <div className="w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Share2 className="w-10 h-10 text-gray-700" />
+                <CardContent className="p-0 text-center space-y-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Handshake className="w-10 h-10 text-orange-600" />
                   </div>
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">Stay Connected</h3>
-                    <p className="text-gray-600">Follow us on our social platforms to see what we're working on</p>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Stay Connected</h3>
+                    <p className="text-gray-600 leading-relaxed">Follow us on social media to stay updated with the latest news, tips, and community stories from the Axovoc family.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -306,7 +432,7 @@ export default function ContactPage() {
           </section>
 
           {/* Contact Form Section */}
-          <section id="contact-form" className="bg-white rounded-3xl p-8 lg:p-16 shadow-lg">
+          <section id="contact-form" className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-lg border border-gray-200">
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Contact Us</h2>
@@ -323,7 +449,7 @@ export default function ContactPage() {
                     name="user_name"
                     type="text"
                     placeholder="Name*"
-                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-gray-50"
+                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-white/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -333,7 +459,7 @@ export default function ContactPage() {
                     name="user_email"
                     type="email"
                     placeholder="Email*"
-                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-gray-50"
+                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-white/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -343,13 +469,13 @@ export default function ContactPage() {
                     name="user_phone"
                     type="tel"
                     placeholder="Phone Number (optional)"
-                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-gray-50"
+                    className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-white/50 backdrop-blur-sm"
                   />
                 </div>
 
                 <div>
                   <Select name="inquiry_type" value={selectedInquiry} onValueChange={setSelectedInquiry}>
-                    <SelectTrigger className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-gray-50">
+                    <SelectTrigger className="w-full text-lg py-6 px-6 border-gray-200 rounded-xl bg-white/50 backdrop-blur-sm">
                       <SelectValue placeholder="I am contacting you about...*" />
                     </SelectTrigger>
                     <SelectContent>
@@ -364,7 +490,7 @@ export default function ContactPage() {
                   <Textarea
                     name="message"
                     placeholder="Message*"
-                    className="w-full min-h-32 text-lg py-6 px-6 border-gray-200 rounded-xl bg-gray-50 resize-none"
+                    className="w-full min-h-32 text-lg py-6 px-6 border-gray-200 rounded-xl bg-white/50 backdrop-blur-sm resize-none"
                     required
                   />
                 </div>
@@ -373,11 +499,11 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting || isSubmitted}
-                    className={`px-12 py-4 rounded-xl text-lg font-medium transition-all duration-300 ${
+                    className={`px-12 py-6 rounded-xl text-lg font-medium transition-all duration-300 ${
                       isSubmitted
                         ? "bg-green-600 hover:bg-green-600 text-white"
                         : "bg-gray-700 hover:bg-gray-800 text-white"
-                    } ${isSubmitting || isSubmitted ? "cursor-not-allowed" : ""}`}
+                    } ${isSubmitting || isSubmitted ? "cursor-not-allowed" : "hover:shadow-lg"}`}
                   >
                     {isSubmitted ? (
                       <div className="flex items-center gap-2">
