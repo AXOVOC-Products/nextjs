@@ -167,26 +167,25 @@ export function JoinUsForm() {
                 <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
                 <span className="text-gray-700">
                   Join our community on{" "}
-                  <a href="#" className="text-blue-600 hover:underline font-medium">
+                  <a href="https://www.youtube.com/@axovoc" className="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
                     YouTube
                   </a>
                   ,{" "}
-                  <a href="#" className="text-blue-600 hover:underline font-medium">
+                  <a href="https://www.strava.com/clubs/axovoc/" className="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
                     Strava
                   </a>
                   ,{" "}
-                  <a href="#" className="text-blue-600 hover:underline font-medium">
+                  <a href="https://www.instagram.com/axovoc/" className="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
                     Instagram
                   </a>
                   ,{" "}
-                  <a href="#" className="text-blue-600 hover:underline font-medium">
+                  <a href="https://www.facebook.com/axovoc" className="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
                     Facebook
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" className="text-blue-600 hover:underline font-medium">
+                  </a>
+                  {" "}and{" "}
+                  <a href="https://www.linkedin.com/in/iamtaruntyagi/" className="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
                     LinkedIn
-                  </a>{" "}
-                  
+                  </a>
                 </span>
               </div>
             </div>
