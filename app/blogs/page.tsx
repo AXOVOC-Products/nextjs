@@ -10,7 +10,7 @@ import { getFeaturedArticles, getAllBlogPosts } from "@/lib/blog-data"
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 import { IoFitness } from "react-icons/io5";
 import { FaRunning } from "react-icons/fa";
-import Footer from "@/components/Footer"
+import Footer from "@/components/footer"
 
 const categories = [
   { name: "Latest Blogs", icon: "new"},
