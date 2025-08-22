@@ -34,13 +34,11 @@ export default function ContactPage() {
 
 
     setIsSubmitting(true)
-    // Axovoc: ("service_axovoc", "template_wcqq2rp", form.current, "F7O73kEPRyUeLudzX")
-    // Test:    ("service_test", "template_592mftc", form.current, "XMhXHlRkawb8MpODV")
-    emailjs.sendForm("service_test", "template_592mftc", form.current, "XMhXHlRkawb8MpODV").then(
+    emailjs.sendForm("service_axovoc", "template_contact", form.current, "F7O73kEPRyUeLudzX").then(
       () => {
         setIsSubmitting(false)
         setIsSubmitted(true)
-        alert("Message sent!")
+        alert("Email sent!")
         form.current?.reset()
         setSelectedInquiry("")
         // Reset the submitted state after 3 seconds
@@ -48,7 +46,7 @@ export default function ContactPage() {
       },
       () => {
         setIsSubmitting(false)
-        alert("Failed to send message.")
+        alert("Failed to send email.")
       },
     )
   }

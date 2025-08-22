@@ -17,7 +17,7 @@ export function JoinUsForm() {
     if (!form.current || isSubmitting || isSubmitted) return
 
     setIsSubmitting(true)
-    emailjs.sendForm("service_join", "template_d88kc7w", form.current, "XMhXHlRkawb8MpODV").then(
+    emailjs.sendForm("service_axovoc_join", "template_join_us", form.current, "F7O73kEPRyUeLudzX").then(
       () => {
         setIsSubmitting(false)
         setIsSubmitted(true)
